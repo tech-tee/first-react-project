@@ -3,6 +3,14 @@ import TopHeader from './components/TopHeader.jsx';
 import MainHeader from './components/MainHeader'; 
 import HeroSection from './components/HeroSection.jsx';
 import Body1 from './components/Body1.jsx';
+import CertificationSection from './components/CertificationSection.jsx';
+import ServicesSection from './components/ServicesSection.jsx';
+import IndSection from './components/IndSection.jsx';
+import PrdSection from './components/PrdSection.jsx';
+import CaseSection from './components/CaseSection.jsx';
+import TechStack from './components/TechStack.jsx';
+import ClientSection from './components/ClientSection.jsx';
+import ConSection from './components/ConSection.jsx';
 
 function App() {
   return (
@@ -11,6 +19,14 @@ function App() {
       <MainHeader />
       <HeroSection />
       <Body1 />
+      <CertificationSection />
+      <ServicesSection />
+      <IndSection />
+      <PrdSection />
+      <CaseSection />
+      <TechStack />
+      <ClientSection />
+      <ConSection />
     </div>
   );
 }

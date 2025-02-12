@@ -1,120 +1,190 @@
-import React from 'react';
-import searchbutton from '../assets/images/search-2903.png';
-import roundSquare from '../assets/images/rounded-square.png';
-import './MainHeader.css'; 
-const MainHeader = () => {
-  const closeMenu = () => {
-    document.getElementById('menu-toggle').checked = false;
-  };
+.nav ul.dropdown {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px;
+    width: 100%;
+  }
 
-  return (
-    <section className="main-header">
-      <div>
-        <div className="logo">
-          <img src="https://speedlinkng.com/wp-content/uploads/2023/06/1-223x93.png" alt="Speedlink Hi-TECH Solutions Limited" />
-          <span className="logo-text">
-            Speedlink Hi-TECH <br /> Solutions Limited
-          </span>
-        </div>
-        <input type="checkbox" id="menu-toggle" className="menu-toggle" />
-        <label htmlFor="menu-toggle" className="hamburger">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </label>
-        <div className="nav">
-            <div>
-              <button className="close-button" onClick={closeMenu}>
-                &times;
-              </button>
-            </div>
-            <div className="parent">
-              <a href="#">Home</a>
-            </div>
-            <div className="parent">
-              <a href="#">About Us</a>
-              <div className="dropdown">
-                <span><a href="#">Who we are</a></span>
-                <span><a href="#">What we do</a></span>
-                <span><a href="#">Why Speedlink</a></span>
-                <span><a href="#">Meet our Team</a></span>
-                <span><a href="#">Our partners & top Clients</a></span>
-              </div>
-            </div>
-            <div className="parent">
-                <a href="#">Services</a>
-                <div className="dropdown">
-                  <div><h5>IT Services</h5></div>
-                    <div className="sub-dropdown">
-                      <span><img src={roundSquare}/>Software Application Development</span><br></br>
-                      <span><img src={roundSquare}/>Web design/development</span><br></br>
-                      <span><img src={roundSquare}/>Software Installations</span>
-                    </div>
-                  <div><h5 href="#">Networking Services</h5></div>
-                    <div className="sub-dropdown">
-                      <span><img src={roundSquare}/>Fiber-to-the-home</span><br></br>
-                      <span><img src={roundSquare}/>Routing and Switching</span><br></br>
-                      <span><img src={roundSquare}/>Voice Over Internet Protocol - VOIP</span><br></br>
-                      <span><img src={roundSquare}/>Internet Service Provider - ISP</span><br></br>
-                    </div>
-                  <div><h5 href="#">Technical Security</h5></div>
-                    <div className="sub-dropdown">
-                      <span><img src={roundSquare}/>Video Surveillance (CCTV)</span><br></br>
-                      <span><img src={roundSquare}/>Intrusion Prevention Systems</span><br></br>
-                      <span><img src={roundSquare}/>Fire detection and fire extinguisher systems</span><br></br>
-                      <span><img src={roundSquare}/>Alarm zs</span>
-                    </div>
-                  <div><h5 href="#">Cloud Services</h5></div>
-                    <div className="sub-dropdown">
-                      <span><img src={roundSquare}/>Storage Infrastructure</span><br></br>
-                      <span><img src={roundSquare}/>Cloud hosting</span><br></br>
-                      <span><img src={roundSquare}/>Cloud based ERP/CRM</span><br></br>
-                    </div>
-                  <div><h5 href="#">Digital Marketing</h5></div>
-                    <div className="sub-dropdown">
-                      <span><img src={roundSquare}/>Social Media Marketing</span><br></br>
-                      <span><img src={roundSquare}/>Digital Advertising</span><br></br>
-                      <span><img src={roundSquare}/>Media Planning and Buying</span><br></br>
-                      <span><img src={roundSquare}/>Search Engine Optimization</span>
-                    </div>
-                  <div><h5 href="#">Certified Training</h5></div>
-                    <div className="sub-dropdown">
-                      <span><img src={roundSquare}/>Mikrotik Certification</span><br></br>
-                      <span><img src={roundSquare}/>CCTV Installation</span><br></br>
-                      <span><img src={roundSquare}/>Web app development</span><br></br>
-                      <span><img src={roundSquare}/>Web design and Development</span>
-                    </div>
-                </div>
-              </div>
-            <div className="parent">
-                <a href="#">Case Study</a></div>
-                <div className="dropdown">
-                  <span>Integration of Secured and Respanable Examination Platform.</span>
-                  <span>Hybrid Learning Management</span>
-                </div>
-              <div className="parent">
-                <a href="#">Products</a>
-                </div>
-                <div className="dropdown">
-                  <span><a href="#">Digi School</a></span>
-                  <span><a href="#">Speeducation</a></span>
-                  <span><a href="#">Speed ERP</a></span>
-                  <span><a href="#">SpeedAdmit</a></span>
-                </div>
-              <div className="parent">
-                <a href="#">Resources</a></div>
-                <div className="dropdown">
-                  <span><a href="#">Blog</a></span>
-                  <span><a href="#">Tech News</a></span>
-                  <span><a href="#">Gallery</a></span>
-                  <span><a href="#">Download Brochure</a></span>
-                </div>
-              <img src={searchbutton} className="searchbutton" alt="Search" />
-              <button className="cta-button"><strong>Get in touch</strong></button>
-          </div>
-      </div>
-    </section>
-  );
-};
+  .nav ul.dropdown, .nav ul.subdropdown{
+    display: none;
+  }
+  
+.nav > ul > li:hover > ul.dropdown, nav ul.dropdown > li:hover > ul.sub-dropdown {
+    display: block;
+  }
+  
+.nav ul.sub-dropdown {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+.nav ul.dropdown li {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+.nav ul.dropdown li a {
+    padding: 10px 15px;
+  }
+  
+.main-header{
+    padding: 0px 100px;
+    margin-top: -20px;
+    margin-left: 20px;
+    height: 150px;
+}
 
-export default MainHeader;
+ .nav{
+    background-color: #fff;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 50px;
+    margin-left: 70px;
+  }
+
+.nav ul li{
+    padding: 0px 8px;
+    list-style-type: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #0A2863;
+    transition: color 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav .parent:hover {
+    color: red;
+    position: relative;
+    border-top: 2px solid red;
+    padding-top: 5px;
+}
+
+.nav ul {
+    text-decoration: none;
+    color: blue;
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    
+}
+
+.searchbutton {
+    max-width: 15px;
+    width: 100%;
+    height: 15px;
+    margin-left: 20px;
+}
+
+.cta-button {
+    background-color: #DA2124;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    margin-top: -15px;
+    margin-left: 20px;
+    margin-right: 10px;
+    max-width: 135px;
+    height: auto;
+}
+
+.cta-button:hover {
+    background-color: black;
+}
+
+.main-header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 2px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    max-width: 40px;
+    width: 100%;
+    height: 23px;
+}
+
+.hamburger .bar {
+    background-color: #0A2863;  
+    height: 5px;
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 30px;
+    text-align: right;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: auto;
+    display: none;
+}
+
+.main-header.logo{
+    display: flex;
+    align-items: center;
+}
+
+.main-header .logo img{
+    width: 215px;
+    height: auto;
+    transition: width 0.3s ease;
+    padding-top: 0.1rem;
+    padding-bottom: 20px;
+}
+
+.main-header .logo .logo-text{
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-left: 10px;
+}
+
+.nav .parent > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-right: 18px;
+    margin-right: -4px;
+  }
+  
+  .nav .parent a::after {
+    content: '';
+    border: solid #0A2863;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.3s ease;
+}

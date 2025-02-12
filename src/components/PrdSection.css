@@ -1,0 +1,121 @@
+
+.products {
+    background: linear-gradient(180deg, #0627AD 0%, #CD2C32 100%);
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.product-text h6 {
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+}
+
+.product-text span {
+    display: block;
+    margin: 10px 0;
+    font-size: 40px;
+    font-family: 'Roboto' , sans-serif;
+    font-weight: bolder;
+}
+
+.product-text p {
+    font-size: 17px;
+    color: #ddd;
+    margin: 0px 0px 8.5px;
+    font-family: 'Open sans' , sans-serif;
+}
+
+.prd-images {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.img-1 {
+    width: 100%;
+    max-width: 300px;
+    height: 350px;
+    object-fit: cover;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.prd-images div {
+    margin-top: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.prd-images h5 {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 25px 0; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 100%;
+    display: flex;  
+    align-items: center; 
+    justify-content: center;
+}
+
+.prd-images h5 a{
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.prd-images h5 img {
+    margin-right: 10px;
+    max-width: 30px;
+    width: 100%;
+    height: 30px;
+}
+
+.prd-button {
+    top: -10px;
+    text-align: center;
+    width: 100%;
+}
+
+.prd-button .buttonprd {
+    background-color: #B41E24;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-size: 16px;
+    font-family: 'Open sans' , sans-serif;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+.prd-button .buttonprd img {
+    max-width: 14px;
+    width: 100%;
+    height: auto;
+}
+
+.prd-button .buttonprd:hover {
+    background-color: #114c8b; 
+    transform: scale(1.1);
+}
