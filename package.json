@@ -2,7 +2,7 @@
   "name": "my-new-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://tech-tee.github.io/first-react-project",
+  
   "dependencies": {
     "cra-template": "1.2.0",
     "react": "^18.2.0",
