@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./MainHeader.css";
 import roundSquare from "../assets/images/rounded-square.png";
+import subArrow from '../assets/images/arro-up-3100.png';
+import arrowIcon from '../assets/images/search-2903.png';
 
 const MainHeader = () => {
   return (
@@ -36,7 +38,27 @@ const MainHeader = () => {
               <CaseStudyOption title="Hybrid Learning Management" />
             </CaseStudyMenu>
           </NavItem>
+          <NavItem label="Products" dropdown>
+            <ProductMenu>
+              <ProductOption title="Digi School"/>
+              <ProductOption title="Speeducation"/>
+              <ProductOption title="Speed ERP"/>
+              <ProductOption title="SpeedAdmit"/>
+            </ProductMenu>
+          </NavItem>
+          <NavItem label="Resources" dropdown>
+            <ResourceMenu>
+              <ResourceOption title="Blog"/>
+              <ResourceOption title="Tech News"/>
+              <ResourceOption title="Gallery"/>
+              <ResourceOption title="Download Brochure"/>
+            </ResourceMenu>
+          </NavItem>
         </ul>
+        <div className="nav-actions">
+        <img src={arrowIcon} className="searchbutton" alt="search" />
+        <button className="cta-button"><span>Get in touch</span></button>
+        </div>
       </div>
     </nav>
   );
@@ -46,7 +68,12 @@ const NavItem = ({ label, dropdown, children }) => {
   const [open, setOpen] = useState(false);
   return (
     <li className="nav-item" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-      <span className="nav-label">{label} {dropdown && "▼"}</span>
+      <span className="nav-label">{label} {dropdown && (
+        <img src={subArrow}
+        alt="Sub-arrow" 
+        className="sub-arrow"        
+        />
+      )}</span>
       {open && children}
     </li>
   );
@@ -88,6 +115,20 @@ const CaseStudyOption = ({ title }) => {
   return <div className="case-study-option">{title}</div>;
 };
 
+const ProductMenu = ({ children }) => {
+  return <div className="product-menu">{children}</div>;
+};
 
+const ProductOption = ({ title }) => {
+  return <div className="product-option">{title}</div>;
+};
+
+const ResourceMenu = ({ children }) => {
+  return <div className="resource-menu">{children}</div>;
+};
+
+const ResourceOption = ({ title }) => {
+  return <div className="resource-option">{title}</div>;
+};
 
 export default MainHeader;
