@@ -6,54 +6,56 @@ import technicalSecurityImg from '../assets/images/Technical-Security-1.jpg';
 import digitalMarketingImg from '../assets/images/digotal-marketing.jpg';
 import cloudServicesImg from '../assets/images/cloud-internetdienste_blue_planet_studio_adobestock_362316663_1545px.jpg';
 import collaborationSystemImg from '../assets/images/Live-Streaning.jpg';
+import arrowIcon from '../assets/images/icons8-right-arrow-48.png';
+import chevron from '../assets/images/right-arrow-6405.png';
 
 const serviceData = {
   itservices: {
     image: itServicesImg,
-    title: 'IT Services',
-    list: ['Software Application Development', 'Software Installation', 'Web Design and Development'],
-    buttonText: 'Learn More',
+    title: "IT Services",
+    points: ["Software Application Development", "Software Installation", "Web Design and Development"],
+    buttonText: "EXPLORE MORE",
   },
   networkservices: {
     image: networkServicesImg,
-    title: 'Network Services',
-    list: ['Fiber-to-the-home', 'Routing and Switching', 'VOIP', 'ISP'],
-    buttonText: 'Explore',
+    title: "Network Services",
+    points: ["Fiber-to-the-home", "Routing and Switching", "VOIP", "ISP"],
+    buttonText: "EXPLORE MORE",
   },
   technicalsecurity: {
     image: technicalSecurityImg,
-    title: 'Technical Security',
-    list: ['CCTV', 'Intrusion Prevention', 'Fire Detection', 'Alarms'],
-    buttonText: 'Discover',
+    title: "Technical Security",
+    points: ["CCTV", "Intrusion Prevention", "Fire Detection", "Alarms"],
+    buttonText: "EXPLORE MORE",
   },
   digitalmarketing: {
     image: digitalMarketingImg,
-    title: 'Digital Marketing',
-    list: ['Social Media Marketing', 'SEO', 'Media Planning'],
-    buttonText: 'Get Started',
+    title: "Digital Marketing",
+    points: ["Social Media Marketing", "SEO", "Media Planning"],
+    buttonText: "EXPLORE MORE",
   },
   collaborationsystem: {
     image: collaborationSystemImg,
-    title: 'Collaboration System',
-    list: ['Team Communication', 'Project Management', 'File Sharing'],
-    buttonText: 'Join Now',
+    title: "Collaboration System",
+    points: ["Team Communication", "Project Management", "File Sharing"],
+    buttonText: "EXPLORE MORE",
   },
   cloudservices: {
     image: cloudServicesImg,
-    title: 'Cloud Services',
-    list: ['Storage Infrastructure', 'Cloud Hosting', 'ERP/CRM'],
-    buttonText: 'See More',
+    title: "Cloud Services",
+    points: ["Storage Infrastructure", "Cloud Hosting", "ERP/CRM"],
+    buttonText: "EXPLORE MORE",
   },
 };
 
 const ServicesSection = () => {
-  const [activeService, setActiveService] = useState('itservices');
+  const [activeService, setActiveService] = useState("itservices");
 
   return (
     <section className="services">
       <div className="ser-txt">
-        <h2>Services we offer</h2>
-        <p>We offer a wide range of specialized services designed to meet your goals</p>
+        <h2>Our Services</h2>
+        <p>Explore our range of internet and digital solutions.</p>
       </div>
       <div className="ser-content">
         <div className="ser-list">
@@ -61,32 +63,39 @@ const ServicesSection = () => {
             {Object.keys(serviceData).map((service) => (
               <li
                 key={service}
-                className="hover-item"
                 onMouseEnter={() => setActiveService(service)}
+                className={activeService === service ? "active" : ""}
               >
-                <a href={`#${service}`}>{serviceData[service].title}</a>
+                <a href="#">{serviceData[service].title}</a>
               </li>
             ))}
           </ul>
         </div>
         <div className="ser-images">
-          <div className="ser-image" style={{
-            backgroundImage: `linear-gradient(47deg, rgb(242, 57, 57) 15%, rgb(3, 45, 171) 57%), url(${serviceData[activeService].image})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}>
-            <div className="overlay" style={{ paddingLeft: '10px', textAlign: 'left' }}>
-              <h3>{serviceData[activeService].title}</h3>
-              <ul>
-                {serviceData[activeService].list.map((item, index) => (
-                  <li key={index}>
-                    <span className="chevron">&gt;</span> {item}
-                  </li>
-                ))}
-              </ul>
-              <button>{serviceData[activeService].buttonText}</button>
+          {Object.entries(serviceData).map(([service, { image, title, points, buttonText }]) => (
+            <div
+              key={service}
+              className={`ser-image ${activeService === service ? "visible" : ""}`}
+              style={{
+                backgroundImage: `linear-gradient(47deg, rgba(242, 57, 57, 0.7) 15%, rgba(3, 45, 171, 0.7) 57%), url(${image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                width: "100%",
+              }}
+            >
+              <div className="overlay">
+                <h3>{title}</h3>
+                <ul>
+                  {points.map((point, index) => (
+                    <li key={index}>
+                      <img src={chevron} className="chevron"/> {point}
+                    </li>
+                  ))}
+                </ul>
+                <button>{buttonText}<img src={arrowIcon} className='arrow'/></button>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

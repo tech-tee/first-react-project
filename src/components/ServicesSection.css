@@ -1,4 +1,3 @@
-
 .services {
     color: #4B4F58;
     padding-left: 100px;
@@ -7,68 +6,62 @@
     flex-direction: column;
     position: relative;
     gap: 20px;
-}
-
-.services::before {
+  }
+  
+  .services::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;   
+    height: 100%;
     background: url('https://speedlinkng.com/wp-content/uploads/2022/09/background-1.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.3; 
+    opacity: 0.3;
     border-radius: 8px;
-    z-index: 0; 
-}
-
-.services::after {
+    z-index: 0;
+  }
+  
+  .services::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;   
+    height: 100%;
     border-radius: 8px;
-    background-color: rgba(211, 211, 211, 0.5); 
-    z-index: 0; 
-}
-
-.services > * {
+    background-color: rgba(211, 211, 211, 0.5);
+    z-index: 0;
+  }
+  
+  .services > * {
     position: relative;
     z-index: 1;
-}
-
-.ser-txt h2 {
+  }
+  
+  .ser-txt h2 {
     color: #020d39;
     font-family: 'Roboto', sans-serif;
-}
-
-.ser-txt p {
+  }
+  
+  .ser-txt p {
     color: #000;
-}
-
-.ser-content {
+  }
+  
+  .ser-content {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-}
-
-.ser-list {
-    flex: 1;
-}
-
-.ser-list ul {
+    gap: 30px;
+  }
+  
+  .ser-list ul {
     list-style: none;
     padding: 0;
-    color: #222121;
-    text-decoration: none;
-    list-style-type: none;
-}
-
-.ser-list ul li {
+  }
+  
+  .ser-list ul li {
     padding: 15px 30px;
     border: 2px solid #f1bcd9;
     background-color: white;
@@ -78,19 +71,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     max-width: 250px;
     width: 100%;
-    height: 20px;
-}
-
-.ser-list ul li:hover {
+  }
+  
+  /* Maintain pill shape by keeping the border and just changing its color */
+  .ser-list ul li:hover,
+  .ser-list ul li.active {
     background-color: #be1219;
     color: white;
-    border: none;
-}
-
-.ser-list ul li a {
+    border-color: #be1219;
+  }
+  
+  .ser-list ul li a {
     text-decoration: none;
     color: #333;
     font-size: 16px;
@@ -100,71 +93,104 @@
     text-align: center;
     line-height: 30px;
     transition: color 0.3s ease;
-}
-
-.ser-list ul li:hover a {
+  }
+  
+  .ser-list ul li:hover a,
+  .ser-list ul li.active a {
     color: white;
-}
-
-.ser-images {
+  }
+  
+  /* Adjusted container for images: now wider and taller */
+  .ser-images {
     position: relative;
-    max-width: 60%; 
-    width: 100%;
-    height: 100%;
-}
-
-.ser-image {
+    width: 700px;
+    height: 400px;
+    margin-top: -20px;
+    margin-left: 80px;
+  }
+  
+  
+  .ser-image {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('https://speedlinkng.com/wp-content/uploads/2022/09/pexels-nemuel-sereti-6424583.jpg') center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.ser-image .overlay {
+  }
+  
+  .ser-image.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .ser-image .overlay {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom right, red, purple, blue);
     color: white;
+    padding-left: 50px;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-}
-
-.ser-image h3 {
+    justify-content: flex-end;
+    padding-bottom: 20px; 
+  }
+  
+  .ser-image h3 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.ser-image ul {
+  }
+  
+  .ser-image ul {
     list-style: none;
     padding: 0;
-}
-
-.ser-image ul li {
+  }
+  
+  .ser-image ul li {
     margin: 10px 0;
     font-size: 18px;
     display: flex;
     align-items: center;
-}
-
-.ser-image ul li .chevron {
+  }
+  
+  .ser-image ul li .chevron {
     margin-right: 10px;
     color: white;
     font-weight: bold;
     font-size: 20px;
+    width: 15px;
+  }
+  
+  .ser-image button {
+    margin-bottom: 25px;
+    padding: 6px 12px; 
+    background-image: linear-gradient(90deg, #30C6DEB8 0%, #3AA2F0C9 100%);
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    width: 180px;
+    height: 50px;
+    font-size: 14px;
+  }
+  
+  .ser-image button:hover {
 }
 
-.hover-item[data-service="itservices"]:hover ~ .ser-images #itservices {
-    opacity: 1;
-    visibility: visible;
+.arrow {
+    max-width: 20px;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
 }
+  

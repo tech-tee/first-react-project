@@ -1,214 +1,270 @@
-My first react app
-
-a {
-    text-decoration: none;
-}
-
-.dropdown, .sub-dropdown {
-    display: none;
-}
-
-.nav-items > .parent:hover > .dropdown,
-.nav-items > .parent:hover > .sub-dropdown {
-    display: block;
-}
-
-.nav ul {
-    list-style-type: none;
+ervices {
+    color: #4B4F58;
+    padding-left: 100px;
+    padding-right: 150px;
     display: flex;
-    gap: 10px;
-}
-
-.nav ul li {
+    flex-direction: column;
     position: relative;
+    gap: 20px;
 }
 
-.nav ul li a {
-    color: #0A2863;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: 500;
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    background: url('https://speedlinkng.com/wp-content/uploads/2022/09/background-1.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; 
+    border-radius: 8px;
+    z-index: 0; 
+}
+
+.services::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+    border-radius: 8px;
+    background-color: rgba(211, 211, 211, 0.5); 
+    z-index: 0; 
+}
+
+.services > * {
+    position: relative;
+    z-index: 1;
+}
+
+.ser-txt h2 {
+    color: #020d39;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ser-txt p {
+    color: #000;
+}
+
+.ser-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ser-list {
+    flex: 1;
+}
+
+.ser-list ul {
+    list-style: none;
+    padding: 0;
+    color: #222121;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.ser-list ul li {
+    padding: 15px 30px;
+    border: 2px solid #f1bcd9;
+    background-color: white;
+    border-radius: 0 30px 30px 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 250px;
+    width: 100%;
+    height: 20px;
+}
+
+.ser-list ul li:hover {
+    background-color: #be1219;
+    color: white;
+    border: none;
+}
+
+.ser-list ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
     transition: color 0.3s ease;
 }
 
-.nav ul li:hover > a {
-    color: red;
-}
-
-/* New Dropdown Styling */
-.parent {
-    position: relative;
-}
-
-.parent > .dropdown {
-    position: absolute;
-    top: 100%;  /* Right below the nav item */
-    left: 0;
-    min-width: 250px;
-    background-color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    z-index: 1000;
-    padding: 15px;
-    display: none;
-}
-
-.parent:hover > .dropdown {
-    display: block;  /* Show on hover */
-}
-
-.dropdown a {
-    display: block;
-    padding: 8px 10px;
-    font-size: 14px;
-    color: #0A2863;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.dropdown a:last-child {
-    border-bottom: none;
-}
-
-.dropdown a:hover {
-    background-color: rgba(218, 33, 36, 0.1);  /* Light red on hover */
-    color: #DA2124;
-}
-
-.sub-dropdown {
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.close-button, .logo-text {
-    display: none;
-}
-
-.hamburger {
-    display: flex;
-}
-
-.menu-toggle:checked ~ .close-button {
-    display: block;
-}
-
-.menu-toggle:checked ~ .nav .logo-text {
-    display: block;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.nav {
-    text-decoration: none;
-    display: flex;
-    gap: 20px;
-    flex-direction: row;
-}
-
-.nav > .nav-items {
-    margin-top: 40px;
-}
-
-.nav > div {
-    margin: 0;
-    padding: 0;
-}
-
-.main-header .logo {
-    margin-right: 12px;
-}
-
-.parent {
-    padding-right: 20px;
-    color: #0A2863;
-}
-
-.nav-items > .parent > a {
-    color: #0A2863;
-    list-style-type: none;
-}
-
-.nav-items > .parent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding-right: 20px;
-}
-
-.nav-items > .parent::after {
-    content: '';
-    border: solid #0A2863;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: translateY(-50%) rotate(45deg);
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transition: transform 0.3s ease;
-}
-
-.nav .parent a:hover {
-    color: red;
-    position: relative;
-    border-top: 2px solid red;
-    padding-top: 5px;
-}
-
-.logo img {
-    max-width: 210px;
-    width: 100%;
-    height: auto;
-    transition: width 0.3s ease;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 130px;
-}
-
-.nav > .logo > .logo-text {
-    display: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    margin-left: 10px;
-}
-
-.searchbutton {
-    max-width: 15px;
-    width: 100%;
-    height: 15px;
-    margin-left: 20px;
-    margin-top: 45px;
-}
-
-.cta-button {
-    background-color: #DA2124;
-    padding: 15px;
-    border-radius: 5px;
-    border: none;
-    margin-top: 25px;
-    margin-left: 5px;
-    margin-right: 10px;
-    width: 140px;
-    height: 50px;
-}
-
-.cta-button > span {
-    font-size: 16px;
-    font-weight: 700;
+.ser-list ul li:hover a {
     color: white;
 }
 
-.cta-button:hover {
-    background-color: black;
+.ser-images {
+    position: relative;
+    max-width: 60%; 
+    width: 100%;
+    height: 100%;
+}
+
+.ser-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://speedlinkng.com/wp-content/uploads/2022/09/pexels-nemuel-sereti-6424583.jpg') center/cover no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ser-image .overlay {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, red, purple, blue);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.ser-image h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ser-image ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ser-image ul li {
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.ser-image ul li .chevron {
+    margin-right: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hover-item[data-service="itservices"]:hover ~ .ser-images #itservices {
+    opacity: 1;
+    visibility: visible;
 }
 
 
 
-"homepage": "https://tech-tee.github.io/first-react-project",
+
+
+import React, { useState } from 'react';
+import './ServicesSection.css';
+import itServicesImg from '../assets/images/pexels-nemuel-sereti-6424583.jpg';
+import networkServicesImg from '../assets/images/pexels-brett-sayles-2881229.jpg';
+import technicalSecurityImg from '../assets/images/Technical-Security-1.jpg';
+import digitalMarketingImg from '../assets/images/digotal-marketing.jpg';
+import cloudServicesImg from '../assets/images/cloud-internetdienste_blue_planet_studio_adobestock_362316663_1545px.jpg';
+import collaborationSystemImg from '../assets/images/Live-Streaning.jpg';
+
+const serviceData = {
+  itservices: {
+    image: itServicesImg,
+    title: 'IT Services',
+    list: ['Software Application Development', 'Software Installation', 'Web Design and Development'],
+    buttonText: 'Learn More',
+  },
+  networkservices: {
+    image: networkServicesImg,
+    title: 'Network Services',
+    list: ['Fiber-to-the-home', 'Routing and Switching', 'VOIP', 'ISP'],
+    buttonText: 'Explore',
+  },
+  technicalsecurity: {
+    image: technicalSecurityImg,
+    title: 'Technical Security',
+    list: ['CCTV', 'Intrusion Prevention', 'Fire Detection', 'Alarms'],
+    buttonText: 'Discover',
+  },
+  digitalmarketing: {
+    image: digitalMarketingImg,
+    title: 'Digital Marketing',
+    list: ['Social Media Marketing', 'SEO', 'Media Planning'],
+    buttonText: 'Get Started',
+  },
+  collaborationsystem: {
+    image: collaborationSystemImg,
+    title: 'Collaboration System',
+    list: ['Team Communication', 'Project Management', 'File Sharing'],
+    buttonText: 'Join Now',
+  },
+  cloudservices: {
+    image: cloudServicesImg,
+    title: 'Cloud Services',
+    list: ['Storage Infrastructure', 'Cloud Hosting', 'ERP/CRM'],
+    buttonText: 'See More',
+  },
+};
+
+const ServicesSection = () => {
+  const [activeService, setActiveService] = useState('itservices');
+
+  return (
+    <section className="services">
+      <div className="ser-txt">
+        <h2>Services we offer</h2>
+        <p>We offer a wide range of specialized services designed to meet your goals</p>
+      </div>
+      <div className="ser-content">
+        <div className="ser-list">
+          <ul>
+            {Object.keys(serviceData).map((service) => (
+              <li
+                key={service}
+                className="hover-item"
+                onMouseEnter={() => setActiveService(service)}
+              >
+                <a href={`#${service}`}>{serviceData[service].title}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="ser-images">
+          <div className="ser-image" style={{
+            backgroundImage: `linear-gradient(47deg, rgb(242, 57, 57) 15%, rgb(3, 45, 171) 57%), url(${serviceData[activeService].image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}>
+            <div className="overlay" style={{ paddingLeft: '10px', textAlign: 'left' }}>
+              <h3>{serviceData[activeService].title}</h3>
+              <ul>
+                {serviceData[activeService].list.map((item, index) => (
+                  <li key={index}>
+                    <span className="chevron">&gt;</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <button>{serviceData[activeService].buttonText}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesSection;
