@@ -1,196 +1,231 @@
 .services {
-    color: #4B4F58;
-    padding-left: 100px;
-    padding-right: 150px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    gap: 20px;
-  }
-  
-  .services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://speedlinkng.com/wp-content/uploads/2022/09/background-1.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    border-radius: 8px;
-    z-index: 0;
-  }
-  
-  .services::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    background-color: rgba(211, 211, 211, 0.5);
-    z-index: 0;
-  }
-  
-  .services > * {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .ser-txt h2 {
-    color: #020d39;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  .ser-txt p {
-    color: #000;
-  }
-  
-  .ser-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-  }
-  
-  .ser-list ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .ser-list ul li {
-    padding: 15px 30px;
-    border: 2px solid #f1bcd9;
-    background-color: white;
-    border-radius: 0 30px 30px 0;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 250px;
-    width: 100%;
-  }
-  
-  /* Maintain pill shape by keeping the border and just changing its color */
-  .ser-list ul li:hover,
-  .ser-list ul li.active {
-    background-color: #be1219;
-    color: white;
-    border-color: #be1219;
-  }
-  
-  .ser-list ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    display: block;
-    width: 100%;
-    text-align: center;
-    line-height: 30px;
-    transition: color 0.3s ease;
-  }
-  
-  .ser-list ul li:hover a,
-  .ser-list ul li.active a {
-    color: white;
-  }
-  
-  /* Adjusted container for images: now wider and taller */
-  .ser-images {
-    position: relative;
-    width: 700px;
-    height: 400px;
-    margin-top: -20px;
-    margin-left: 80px;
-  }
-  
-  
-  .ser-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-  
-  .ser-image.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .ser-image .overlay {
-    width: 100%;
-    height: 100%;
-    color: white;
-    padding-left: 50px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 20px; 
-  }
-  
-  .ser-image h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .ser-image ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .ser-image ul li {
-    margin: 10px 0;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .ser-image ul li .chevron {
-    margin-right: 10px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    width: 15px;
-  }
-  
-  .ser-image button {
-    margin-bottom: 25px;
-    padding: 6px 12px; 
-    background-image: linear-gradient(90deg, #30C6DEB8 0%, #3AA2F0C9 100%);
-    border: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 14px;
-    width: 180px;
-    height: 50px;
-    font-size: 14px;
-  }
-  
-  .ser-image button:hover {
+  color: #4B4F58;
+  padding-left: 100px;
+  padding-right: 150px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 20px;
+  margin-bottom: 70px;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 750px;
+  background: url('https://speedlinkng.com/wp-content/uploads/2022/09/background-1.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.services::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 750px;
+  background-color: rgba(211, 211, 211, 0.5);
+  z-index: 0;
+}
+
+.services > * {
+  position: relative;
+  z-index: 1;
+}
+
+.ser-txt h2 {
+  color: #020d39;
+  font-family: 'Roboto', sans-serif;
+}
+
+.ser-txt p {
+  color: #000;
+}
+
+.ser-txt1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; 
+}
+
+.ser-txt1 p {
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #000;
+}
+
+.ser-txt1 button {
+  background-color: #B41E24;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 50px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.ser-txt1 button span {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  margin-right: 5px;
+}
+
+.ser-txt1 > .paper-plan-icon{
+  margin-left: 30px;
+}
+
+.ser-txt1 button:hover {
+  background-color: blue;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.ser-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.ser-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ser-list ul li {
+  padding: 15px 30px;
+  border: 2px solid #f1bcd9;
+  border-radius: 0 30px 30px 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  width: 300px;
+  margin-bottom: 30px;
+  margin-top: -20px;
+}
+
+.ser-list ul li:hover,
+.ser-list ul li.active {
+  background-color: #be1219;
+  color: white;
+  border-color: #be1219;
+}
+
+.ser-list ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 20px;
+  font-family: "Nexa bold", Sans-serif;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  text-align: left;
+  line-height: 30px;
+  transition: color 0.3s ease;
+}
+
+.ser-list ul li:hover a,
+.ser-list ul li.active a {
+  color: white;
+}
+
+.ser-images {
+  position: relative;
+  width: 900px;
+  height: 475px;
+  margin-top: 25px;
+  margin-left: 10px;
+}
+
+.ser-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 740px;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.ser-image.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ser-image .overlay {
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding-left: 50px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 20px; 
+}
+
+.ser-image h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ser-image ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ser-image ul li {
+  margin: 5px 0;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.chevron {
+  margin-right: 10px; 
+}
+
+
+.ser-image button {
+  margin-bottom: 25px;
+  padding: 6px 12px; 
+  background-image: linear-gradient(90deg, #30C6DEB8 0%, #3AA2F0C9 100%);
+  border: none;
+  color: white;
+  font-weight: 549;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  width: 180px;
+  height: 50px;
+}
+
+.ser-image button:hover {
+  transform: scale(0.95);
 }
 
 .arrow {
-    max-width: 20px;
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
+  max-width: 20px;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 5px;
 }
-  

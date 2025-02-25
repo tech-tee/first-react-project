@@ -6,9 +6,11 @@ import technicalSecurityImg from '../assets/images/Technical-Security-1.jpg';
 import digitalMarketingImg from '../assets/images/digotal-marketing.jpg';
 import cloudServicesImg from '../assets/images/cloud-internetdienste_blue_planet_studio_adobestock_362316663_1545px.jpg';
 import collaborationSystemImg from '../assets/images/Live-Streaning.jpg';
-import arrowIcon from '../assets/images/icons8-right-arrow-48.png';
-import chevron from '../assets/images/right-arrow-6405.png';
-
+import certifiedTrainingImg from '../assets/images/lecture.jpg';
+import arrowIcon from '../assets/images/right-arrow.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 const serviceData = {
   itservices: {
     image: itServicesImg,
@@ -19,19 +21,25 @@ const serviceData = {
   networkservices: {
     image: networkServicesImg,
     title: "Network Services",
-    points: ["Fiber-to-the-home", "Routing and Switching", "VOIP", "ISP"],
+    points: ["Routing and Switchin", "VOIP - Voice over Internet Protocol", "Fibre to the home", "ISP - Internet Service Provider"],
     buttonText: "EXPLORE MORE",
   },
   technicalsecurity: {
     image: technicalSecurityImg,
     title: "Technical Security",
-    points: ["CCTV", "Intrusion Prevention", "Fire Detection", "Alarms"],
+    points: ["Video surveillance", "Intrusion prevention systems", "GPS tracking system", "Access control and time-attendance solutions"],
     buttonText: "EXPLORE MORE",
   },
   digitalmarketing: {
     image: digitalMarketingImg,
     title: "Digital Marketing",
-    points: ["Social Media Marketing", "SEO", "Media Planning"],
+    points: ["Social Media Marketing", "Digital Advertising", "Media planning and buying", "Search Engine Optimization", "Email marketing"],
+    buttonText: "EXPLORE MORE",
+  },
+  cloudservices: {
+    image: cloudServicesImg,
+    title: "Cloud Services",
+    points: ["Storage Infrastructure", "Cloud Hosting", "Cloud Based ERP/CRM"],
     buttonText: "EXPLORE MORE",
   },
   collaborationsystem: {
@@ -40,12 +48,12 @@ const serviceData = {
     points: ["Team Communication", "Project Management", "File Sharing"],
     buttonText: "EXPLORE MORE",
   },
-  cloudservices: {
-    image: cloudServicesImg,
-    title: "Cloud Services",
-    points: ["Storage Infrastructure", "Cloud Hosting", "ERP/CRM"],
-    buttonText: "EXPLORE MORE",
-  },
+  certifiedtraining: {
+    image: certifiedTrainingImg,
+    title: "Certified Training",
+    points: ["Mikrotik Certification", "CCTV Installation", "Web app development", "Web design and Devopment"],
+    buttonText: "EXPLORE MORE"
+  }
 };
 
 const ServicesSection = () => {
@@ -54,8 +62,12 @@ const ServicesSection = () => {
   return (
     <section className="services">
       <div className="ser-txt">
-        <h2>Our Services</h2>
-        <p>Explore our range of internet and digital solutions.</p>
+        <h2>Services we offer</h2>
+        <div className='ser-txt1'>
+        <p>We offer a wide range of specialized services Designed to meet your<br/> goals</p>
+        <button><span>Who we do</span><FontAwesomeIcon icon={faPaperPlane} className="paper-plane-icon" style={{ color: "#ffffff"}} />
+        </button>
+        </div>
       </div>
       <div className="ser-content">
         <div className="ser-list">
@@ -77,10 +89,9 @@ const ServicesSection = () => {
               key={service}
               className={`ser-image ${activeService === service ? "visible" : ""}`}
               style={{
-                backgroundImage: `linear-gradient(47deg, rgba(242, 57, 57, 0.7) 15%, rgba(3, 45, 171, 0.7) 57%), url(${image})`,
+                backgroundImage: `linear-gradient(180deg, #D2060FD6 0%, #062CD1D1 100%), url(${image})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                width: "100%",
               }}
             >
               <div className="overlay">
@@ -88,7 +99,7 @@ const ServicesSection = () => {
                 <ul>
                   {points.map((point, index) => (
                     <li key={index}>
-                      <img src={chevron} className="chevron"/> {point}
+                      <FontAwesomeIcon icon={faChevronRight} className='chevron' style={{color: "#ffffff",}} />{point}
                     </li>
                   ))}
                 </ul>

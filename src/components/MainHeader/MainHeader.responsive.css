@@ -1,0 +1,39 @@
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+  
+  .close-icon {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+    
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .nav-links.active {
+      display: flex;
+    }
+    
+    .nav-item {
+      margin: 10px 0;
+    }
+  }
+  

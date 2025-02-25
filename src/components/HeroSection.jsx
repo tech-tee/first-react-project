@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeroSection.css'; 
-import arrowIcon from '../assets/images/icons8-right-arrow-48.png'
+import arrowIcon from '../assets/images/right-arrow.png';
 const HeroSection = () => {
   return (
     <section className="hero">
