@@ -1,0 +1,47 @@
+.tech-stack{
+  background-color: #333232;
+  height: 370px;
+  margin-top: -120px;
+  position: relative;
+  overflow: hidden;
+}
+.tech-text{
+  text-align: center;
+  color: white;
+  padding-top: 70px;
+  font-weight: 500;
+  font-size: 25px;
+}
+.custom-divider{
+  display: flex;          
+  align-items: center;    
+  justify-content: center;
+  gap: 10px;             
+  margin: 20px 0; 
+}
+.dot{
+  width: 5px;
+  height: 5px;
+  background-color: #2575FC;
+  border-radius: 50%;
+}
+.rectangle{
+  width: 40px;
+  height: 5px;
+  background-color: #2575FC;
+  border-radius: 4px;
+}
+.tech-img{
+  overflow: hidden;
+  width: 856px;
+  margin: 0 auto;
+}
+.tech-img-inner{
+  display: flex;
+
+}
+.tech-img img{
+  width: 50px;
+  margin-right: 35px;
+  padding-bottom: 70px;
+}

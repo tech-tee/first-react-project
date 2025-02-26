@@ -8,8 +8,8 @@ import ServicesSection from './components/ServicesSection.jsx';
 import IndSection from './components/IndSection.jsx';
 import PrdSection from './components/PrdSection.jsx';
 import CaseSection from './components/CaseSection.jsx';
-import TechStack from './components/TechStack.jsx';
-import ClientSection from './components/ClientSection.jsx';
+import TechStack from './components/TechStack/TechStack.jsx';
+import ClientSection from './components/ClientSection/ClientSection.jsx';
 import ConSection from './components/ConSection.jsx';
 
 function App() {

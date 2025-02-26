@@ -334,3 +334,7 @@
 .cta-button:hover {
   background-color: black;
 }
+
+.side-close{
+  display: none;
+}

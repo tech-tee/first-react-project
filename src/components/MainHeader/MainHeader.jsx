@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./MainHeader.css";
-import './MainHeader.responsive.css'
+import "./MainHeader.responsive.css";
 import roundSquare from "../../assets/images/rounded-square.png";
 import subArrow from "../../assets/images/arro-up-3100.png";
 import arrowIcon from "../../assets/images/search-2903.png";
@@ -8,17 +8,12 @@ import arrowIcon from "../../assets/images/search-2903.png";
 const MainHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
-
   return (
     <nav className="navbar">
       <div className="container">
         <h1 className="logo">
-          <img
-            src="https://speedlinkng.com/wp-content/uploads/2023/06/1-223x93.png"
-            alt="Logo"
-          />
+          <img src="https://speedlinkng.com/wp-content/uploads/2023/06/1-223x93.png" alt="Logo" />
         </h1>
-        {/* Hamburger / Close Icon */}
         <div className="hamburger" onClick={toggleMenu}>
           {menuOpen ? (
             <span className="close-icon">&times;</span>
@@ -31,92 +26,26 @@ const MainHeader = () => {
           )}
         </div>
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <button className="side-close" onClick={toggleMenu}>&times;</button>
           <NavItem label="Home" />
           <NavItem label="About Us" dropdown>
             <DropdownMenu className="about-us-menu">
-              <DropdownItem
-                title="Who we are"
-                description="Our history, mission, vision, and values."
-              />
-              <DropdownItem
-                title="What we do"
-                description="Learn more about the wide range of IT services we offer."
-              />
-              <DropdownItem
-                title="Why Speedlink"
-                description="We provide ICT solutions that make your business stand out."
-              />
-              <DropdownItem
-                title="Meet our Team"
-                description="Meet our decent, hardworking team members."
-              />
-              <DropdownItem
-                title="Our partners & top Clients"
-                description="View our partner companies and top clients."
-              />
+              <DropdownItem title="Who we are" description="Our history, mission, vision, and values." />
+              <DropdownItem title="What we do" description="Learn more about the wide range of IT services we offer." />
+              <DropdownItem title="Why Speedlink" description="We provide ICT solutions that make your business stand out." />
+              <DropdownItem title="Meet our Team" description="Meet our decent, hardworking team members." />
+              <DropdownItem title="Our partners & top Clients" description="View our partner companies and top clients." />
             </DropdownMenu>
           </NavItem>
           <NavItem label="Services" dropdown>
             <DropdownMenu mega>
               <div className="mega-menu">
-                <Category
-                  title="IT Services"
-                  items={[
-                    "Software Application Development",
-                    "Web design/development",
-                    "Software installations",
-                  ]}
-                  className="section-1"
-                />
-                <Category
-                  title="Networking Services"
-                  items={[
-                    "Fiber-to-the-home",
-                    "Routing and Switching",
-                    "Voice Over Internet Protocol - VOIP",
-                    "Internet Service Provider - ISP",
-                  ]}
-                  className="section-2"
-                />
-                <Category
-                  title="Technical Security"
-                  items={[
-                    "Video Surveillance (CCTV)",
-                    "Intrusion Prevention Systems",
-                    "Fire detection systems",
-                    "Alarm zs",
-                  ]}
-                  className="section-3"
-                />
-                <Category
-                  title="Cloud Services"
-                  items={[
-                    "Storage Infrastructure",
-                    "Cloud hosting",
-                    "Cloud-based ERP/CRM",
-                  ]}
-                  className="section-4"
-                />
-                <Category
-                  title="Digital Marketing"
-                  items={[
-                    "Social Media Marketing",
-                    "Digital Marketing",
-                    "Media Planning and Buying",
-                    "Search Engine Optimization",
-                  ]}
-                  className="section-5"
-                />
-                <Category
-                  title="Certified Training"
-                  items={[
-                    "Mikrotik Certification",
-                    "CCTV Installation",
-                    "Web app development",
-                    "Web design and development",
-                  ]}
-                  className="section-6"
-                />
+                <Category title="IT Services" items={["Software Application Development", "Web design/development", "Software installations"]} className="section-1" />
+                <Category title="Networking Services" items={["Fiber-to-the-home", "Routing and Switching", "Voice Over Internet Protocol - VOIP", "Internet Service Provider - ISP"]} className="section-2" />
+                <Category title="Technical Security" items={["Video Surveillance (CCTV)", "Intrusion Prevention Systems", "Fire detection systems", "Alarm zs"]} className="section-3" />
+                <Category title="Cloud Services" items={["Storage Infrastructure", "Cloud hosting", "Cloud-based ERP/CRM"]} className="section-4" />
+                <Category title="Digital Marketing" items={["Social Media Marketing", "Digital Marketing", "Media Planning and Buying", "Search Engine Optimization"]} className="section-5" />
+                <Category title="Certified Training" items={["Mikrotik Certification", "CCTV Installation", "Web app development", "Web design and development"]} className="section-6" />
               </div>
             </DropdownMenu>
           </NavItem>
@@ -156,25 +85,38 @@ const MainHeader = () => {
 
 const NavItem = ({ label, dropdown, children }) => {
   const [open, setOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const updateMedia = () => {
+      setIsMobile(window.innerWidth <= 1024);
+    };
+    updateMedia();
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  }, []);
+  const handleClick = (e) => {
+    if (dropdown && isMobile) {
+      e.stopPropagation();
+      setOpen(!open);
+    }
+  };
   return (
     <li
       className="nav-item"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onClick={handleClick}
+      onMouseEnter={!isMobile && dropdown ? () => setOpen(true) : undefined}
+      onMouseLeave={!isMobile && dropdown ? () => setOpen(false) : undefined}
     >
       <span className="nav-label">
-        {label}{" "}
-        {dropdown && (
-          <img src={subArrow} alt="Sub-arrow" className="sub-arrow" />
-        )}
+        {label} {dropdown && <img src={subArrow} alt="Sub-arrow" className="sub-arrow" />}
       </span>
       {open && children}
     </li>
   );
 };
 
-const DropdownMenu = ({ mega, children }) => {
-  return <div className={mega ? "dropdown mega" : "dropdown"}>{children}</div>;
+const DropdownMenu = ({ mega, children, className }) => {
+  return <div className={mega ? `dropdown mega ${className ? className : ""}` : `dropdown ${className ? className : ""}`}>{children}</div>;
 };
 
 const DropdownItem = ({ title, description }) => {
