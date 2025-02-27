@@ -1,6 +1,5 @@
 import React from 'react';
 import './TopHeader.css';
-import './TopHeader.responsive.css'; 
 import facebookLogo from '../../assets/images/facebook-logo-108.png';
 import twitterLogo from '../../assets/images/twitter-logo-2429.png';
 import linkedinLogo from '../../assets/images/linkedin-112.png';

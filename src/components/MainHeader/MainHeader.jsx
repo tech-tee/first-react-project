@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"; 
 import "./MainHeader.css";
-import "./MainHeader.responsive.css";
 import roundSquare from "../../assets/images/rounded-square.png";
 import subArrow from "../../assets/images/arro-up-3100.png";
 import arrowIcon from "../../assets/images/search-2903.png";
@@ -14,19 +13,19 @@ const MainHeader = () => {
         <h1 className="logo">
           <img src="https://speedlinkng.com/wp-content/uploads/2023/06/1-223x93.png" alt="Logo" />
         </h1>
-        <div className="hamburger" onClick={toggleMenu}>
-          {menuOpen ? (
-            <span className="close-icon">&times;</span>
-          ) : (
-            <>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-            </>
-          )}
-        </div>
+        {!menuOpen && (
+          <div className="hamburger" onClick={toggleMenu}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+        )}
         <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
           <button className="side-close" onClick={toggleMenu}>&times;</button>
+          <li className="search-bar">
+            <input type="text" placeholder="Search..." />
+            <img src={arrowIcon} alt="Search Icon" className="search-icon" />
+          </li>
           <NavItem label="Home" />
           <NavItem label="About Us" dropdown>
             <DropdownMenu className="about-us-menu">
@@ -41,11 +40,11 @@ const MainHeader = () => {
             <DropdownMenu mega>
               <div className="mega-menu">
                 <Category title="IT Services" items={["Software Application Development", "Web design/development", "Software installations"]} className="section-1" />
-                <Category title="Networking Services" items={["Fiber-to-the-home", "Routing and Switching", "Voice Over Internet Protocol - VOIP", "Internet Service Provider - ISP"]} className="section-2" />
-                <Category title="Technical Security" items={["Video Surveillance (CCTV)", "Intrusion Prevention Systems", "Fire detection systems", "Alarm zs"]} className="section-3" />
-                <Category title="Cloud Services" items={["Storage Infrastructure", "Cloud hosting", "Cloud-based ERP/CRM"]} className="section-4" />
-                <Category title="Digital Marketing" items={["Social Media Marketing", "Digital Marketing", "Media Planning and Buying", "Search Engine Optimization"]} className="section-5" />
-                <Category title="Certified Training" items={["Mikrotik Certification", "CCTV Installation", "Web app development", "Web design and development"]} className="section-6" />
+                <Category title="Networking Services" items={["Fiber-to-the-home", "Routing and Switching", "VOIP", "ISP"]} className="section-2" />
+                <Category title="Technical Security" items={["CCTV", "Intrusion Prevention", "Fire detection", "Alarms"]} className="section-3" />
+                <Category title="Cloud Services" items={["Storage", "Cloud hosting", "Cloud ERP/CRM"]} className="section-4" />
+                <Category title="Digital Marketing" items={["Social Media", "Digital Marketing", "Media Planning", "SEO"]} className="section-5" />
+                <Category title="Certified Training" items={["Mikrotik", "CCTV Installation", "Web app development", "Web design"]} className="section-6" />
               </div>
             </DropdownMenu>
           </NavItem>
@@ -102,7 +101,7 @@ const NavItem = ({ label, dropdown, children }) => {
   };
   return (
     <li
-      className="nav-item"
+      className={`nav-item ${open ? "active" : ""}`}
       onClick={handleClick}
       onMouseEnter={!isMobile && dropdown ? () => setOpen(true) : undefined}
       onMouseLeave={!isMobile && dropdown ? () => setOpen(false) : undefined}
@@ -110,13 +109,14 @@ const NavItem = ({ label, dropdown, children }) => {
       <span className="nav-label">
         {label} {dropdown && <img src={subArrow} alt="Sub-arrow" className="sub-arrow" />}
       </span>
+      {/* On mobile, when active, render dropdown inline */}
       {open && children}
     </li>
   );
 };
 
 const DropdownMenu = ({ mega, children, className }) => {
-  return <div className={mega ? `dropdown mega ${className ? className : ""}` : `dropdown ${className ? className : ""}`}>{children}</div>;
+  return <div className={mega ? `dropdown mega ${className || ""}` : `dropdown ${className || ""}`}>{children}</div>;
 };
 
 const DropdownItem = ({ title, description }) => {
