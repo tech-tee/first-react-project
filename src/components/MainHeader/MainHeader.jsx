@@ -1,44 +1,60 @@
-import { useState, useEffect } from "react"; 
+import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import "./MainHeader.css";
-import roundSquare from "../../assets/images/rounded-square.png";
-import subArrow from "../../assets/images/arro-up-3100.png";
-import arrowIcon from "../../assets/images/search-2903.png";
 
-const MainHeader = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+/* Category Component */
+const Category = ({ title, items, className }) => (
+  <div className={`mega-category ${className}`}>
+    <h3>{title}</h3>
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}><a href="#">{item}</a></li>
+      ))}
+    </ul>
+  </div>
+);
+
+function MainHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(null);
+
+  const toggleDropdown = (menu) => {
+    setDropdownOpen((prev) => (prev === menu ? null : menu));
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
-        <h1 className="logo">
-          <img src="https://speedlinkng.com/wp-content/uploads/2023/06/1-223x93.png" alt="Logo" />
-        </h1>
-        {!menuOpen && (
-          <div className="hamburger" onClick={toggleMenu}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
+        <a href="#" className="logo">
+          <img src="https://speedlinkng.com/wp-content/uploads/2023/06/1-223x93.png" alt="Logo" className="logo-img" />
+        </a>
+
+        {/* Desktop Menu */}
+        <div className="menu">
+          {/* Home */}
+          <div className="nav-item">
+            <button className="nav-button">Home</button>
           </div>
-        )}
-        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
-          <button className="side-close" onClick={toggleMenu}>&times;</button>
-          <li className="search-bar">
-            <input type="text" placeholder="Search..." />
-            <img src={arrowIcon} alt="Search Icon" className="search-icon" />
-          </li>
-          <NavItem label="Home" />
-          <NavItem label="About Us" dropdown>
-            <DropdownMenu className="about-us-menu">
-              <DropdownItem title="Who we are" description="Our history, mission, vision, and values." />
-              <DropdownItem title="What we do" description="Learn more about the wide range of IT services we offer." />
-              <DropdownItem title="Why Speedlink" description="We provide ICT solutions that make your business stand out." />
-              <DropdownItem title="Meet our Team" description="Meet our decent, hardworking team members." />
-              <DropdownItem title="Our partners & top Clients" description="View our partner companies and top clients." />
-            </DropdownMenu>
-          </NavItem>
-          <NavItem label="Services" dropdown>
-            <DropdownMenu mega>
-              <div className="mega-menu">
+
+          {/* About Us Dropdown */}
+          <div className="nav-item" onMouseEnter={() => setDropdownOpen("About Us")} onMouseLeave={() => setDropdownOpen(null)}>
+            <button className="nav-button" onClick={() => toggleDropdown("About Us")}>About Us <ChevronDown size={16} /></button>
+            {dropdownOpen === "About Us" && (
+              <div className="dropdown-container about-us-menu">
+              <div className="dropdown-item"><a href="#"><strong>Who we are</strong><br /><span>Our history, mission, vision, and values.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>What we do</strong><br /><span>Learn more about the wide range of IT services we offer.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>Why Speedlink</strong><br /><span>We provide ICT solutions that make your business stand out.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>Meet our Team</strong><br /><span>Meet our decent, hardworking team members.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>Our partners & top Clients</strong><br /><span>View our partner companies and top clients.</span></a></div>
+            </div>
+            )}
+          </div>
+
+          {/* Services Mega Dropdown */}
+          <div className="nav-item" onMouseEnter={() => setDropdownOpen("Service")} onMouseLeave={() => setDropdownOpen(null)}>
+            <button className="nav-button" onClick={() => toggleDropdown("Service")}>Service <ChevronDown size={16} /></button>
+            {dropdownOpen === "Service" && (
+              <div className="dropdown-container mega-menu">
                 <Category title="IT Services" items={["Software Application Development", "Web design/development", "Software installations"]} className="section-1" />
                 <Category title="Networking Services" items={["Fiber-to-the-home", "Routing and Switching", "VOIP", "ISP"]} className="section-2" />
                 <Category title="Technical Security" items={["CCTV", "Intrusion Prevention", "Fire detection", "Alarms"]} className="section-3" />
@@ -46,125 +62,84 @@ const MainHeader = () => {
                 <Category title="Digital Marketing" items={["Social Media", "Digital Marketing", "Media Planning", "SEO"]} className="section-5" />
                 <Category title="Certified Training" items={["Mikrotik", "CCTV Installation", "Web app development", "Web design"]} className="section-6" />
               </div>
-            </DropdownMenu>
-          </NavItem>
-          <NavItem label="Case Study" dropdown>
-            <CaseStudyMenu>
-              <CaseStudyOption title="Integration of Secured and Reliable Examination Platform" />
-              <CaseStudyOption title="Hybrid Learning Management" />
-            </CaseStudyMenu>
-          </NavItem>
-          <NavItem label="Products" dropdown>
-            <ProductMenu>
-              <ProductOption title="Digi School" />
-              <ProductOption title="Speeducation" />
-              <ProductOption title="Speed ERP" />
-              <ProductOption title="SpeedAdmit" />
-            </ProductMenu>
-          </NavItem>
-          <NavItem label="Resources" dropdown>
-            <ResourceMenu>
-              <ResourceOption title="Blog" />
-              <ResourceOption title="Tech News" />
-              <ResourceOption title="Gallery" />
-              <ResourceOption title="Download Brochure" />
-            </ResourceMenu>
-          </NavItem>
-        </ul>
-        <div className="nav-actions">
-          <img src={arrowIcon} className="searchbutton" alt="search" />
-          <button className="cta-button">
-            <span>Get in touch</span>
-          </button>
+            )}
+          </div>
+
+          {/* Other Nav Items */}
+          <div className="nav-item">
+            <button className="nav-button">Case Study <ChevronDown size={16} /></button>
+          </div>
+
+          <div className="nav-item">
+            <button className="nav-button">Products <ChevronDown size={16} /></button>
+          </div>
+
+          <div className="nav-item">
+            <button className="nav-button">Resources <ChevronDown size={16} /></button>
+          </div>
+
+          <div className="search-container">
+            <button className="search-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+          </div>
+
+          <button className="sign-up">Get in touch</button>
         </div>
       </div>
+
+      {/* Mobile Menu Button */}
+      <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? <X size={28} /> : <Menu size={28} />}
+      </button>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className={`mobile-menu ${isOpen ? "active" : ""}`}>
+          {/* Close Button */}
+          <button className="close-button" onClick={() => setIsOpen(false)}>
+            <X size={28} />
+          </button>
+
+          <div className="mobile-search">
+            <input type="text" placeholder="Search..." />
+            <button className="search-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </button>
+          </div>
+
+          {[ 
+            { label: "Home", dropdown: false },
+            { label: "About Us", dropdown: true, options: [] }, // You'll provide items here
+            { label: "Product & Services", dropdown: true, options: [] }, // You'll provide items here
+            { label: "Case Study", dropdown: true, options: [] }, // You'll provide items here
+            { label: "Solutions", dropdown: true, options: [] }, // You'll provide items here
+            { label: "Resources", dropdown: true, options: [] }, // You'll provide items here
+            { label: "Contact", dropdown: false }
+          ].map((item) => (
+            <div className={`nav-item ${dropdownOpen === item.label ? "active" : ""}`} key={item.label}>
+              <button className="nav-button" onClick={() => toggleDropdown(item.label)}>
+                {item.label} {item.dropdown && <ChevronDown size={16} />}
+              </button>
+              {item.dropdown && dropdownOpen === item.label && (
+                <div className="dropdown-container">
+                  {item.options.map((option, index) => (
+                    <a href="#" key={index}>{option}</a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+          {/* Get in Touch Button */}
+          <button className="sign-up">Get in Touch</button>
+        </div>
+      )}
     </nav>
   );
-};
-
-const NavItem = ({ label, dropdown, children }) => {
-  const [open, setOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const updateMedia = () => {
-      setIsMobile(window.innerWidth <= 1024);
-    };
-    updateMedia();
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
-  }, []);
-  const handleClick = (e) => {
-    if (dropdown && isMobile) {
-      e.stopPropagation();
-      setOpen(!open);
-    }
-  };
-  return (
-    <li
-      className={`nav-item ${open ? "active" : ""}`}
-      onClick={handleClick}
-      onMouseEnter={!isMobile && dropdown ? () => setOpen(true) : undefined}
-      onMouseLeave={!isMobile && dropdown ? () => setOpen(false) : undefined}
-    >
-      <span className="nav-label">
-        {label} {dropdown && <img src={subArrow} alt="Sub-arrow" className="sub-arrow" />}
-      </span>
-      {/* On mobile, when active, render dropdown inline */}
-      {open && children}
-    </li>
-  );
-};
-
-const DropdownMenu = ({ mega, children, className }) => {
-  return <div className={mega ? `dropdown mega ${className || ""}` : `dropdown ${className || ""}`}>{children}</div>;
-};
-
-const DropdownItem = ({ title, description }) => {
-  return (
-    <div className="dropdown-item">
-      <strong>{title}</strong>
-      {description && <p>{description}</p>}
-    </div>
-  );
-};
-
-const Category = ({ title, items, className }) => {
-  return (
-    <div className={`category ${className}`}>
-      <h3>{title}</h3>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            <img src={roundSquare} alt="icon" className="icon" /> {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-const CaseStudyMenu = ({ children }) => {
-  return <div className="case-study-menu">{children}</div>;
-};
-
-const CaseStudyOption = ({ title }) => {
-  return <div className="case-study-option">{title}</div>;
-};
-
-const ProductMenu = ({ children }) => {
-  return <div className="product-menu">{children}</div>;
-};
-
-const ProductOption = ({ title }) => {
-  return <div className="product-option">{title}</div>;
-};
-
-const ResourceMenu = ({ children }) => {
-  return <div className="resource-menu">{children}</div>;
-};
-
-const ResourceOption = ({ title }) => {
-  return <div className="resource-option">{title}</div>;
-};
+}
 
 export default MainHeader;
