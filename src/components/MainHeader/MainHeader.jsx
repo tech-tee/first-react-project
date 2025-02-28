@@ -50,7 +50,6 @@ function MainHeader() {
             )}
           </div>
 
-          {/* Services Mega Dropdown */}
           <div className="nav-item" onMouseEnter={() => setDropdownOpen("Service")} onMouseLeave={() => setDropdownOpen(null)}>
             <button className="nav-button" onClick={() => toggleDropdown("Service")}>Service <ChevronDown size={16} /></button>
             {dropdownOpen === "Service" && (
@@ -65,27 +64,53 @@ function MainHeader() {
             )}
           </div>
 
-          {/* Other Nav Items */}
-          <div className="nav-item">
-            <button className="nav-button">Case Study <ChevronDown size={16} /></button>
-          </div>
+          <div className="nav-item" onMouseEnter={() => setDropdownOpen("Case Study")} onMouseLeave={() => setDropdownOpen(null)}>
+  <button className="nav-button" onClick={() => toggleDropdown("Case Study")}>
+    Case Study <ChevronDown size={16} />
+  </button>
+  {dropdownOpen === "Case Study" && (
+    <div className="dropdown-container case-study-menu">
+      <a href="#">Integration of Secured and Reliable Examination Platform</a>
+      <a href="#">Hybrid Learning Management</a>
+    </div>
+  )}
+</div>
 
-          <div className="nav-item">
-            <button className="nav-button">Products <ChevronDown size={16} /></button>
-          </div>
-
-          <div className="nav-item">
-            <button className="nav-button">Resources <ChevronDown size={16} /></button>
-          </div>
-
-          <div className="search-container">
-            <button className="search-button">
-              <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-              </svg>
-            </button>
-          </div>
-
+{/* Products Dropdown */}
+<div className="nav-item" onMouseEnter={() => setDropdownOpen("Products")} onMouseLeave={() => setDropdownOpen(null)}>
+  <button className="nav-button" onClick={() => toggleDropdown("Products")}>
+    Products <ChevronDown size={16} />
+  </button>
+  {dropdownOpen === "Products" && (
+    <div className="dropdown-container products-menu">
+      <a href="#">Digi School</a>
+      <a href="#">Speeducation</a>
+      <a href="#">Speed ERP</a>
+      <a href="#">SpeedAdmit</a>
+    </div>
+  )}
+</div>
+{/* Resources Dropdown */}
+<div className="nav-item" onMouseEnter={() => setDropdownOpen("Resources")} onMouseLeave={() => setDropdownOpen(null)}>
+  <button className="nav-button" onClick={() => toggleDropdown("Resources")}>
+    Resources <ChevronDown size={16} />
+  </button>
+  {dropdownOpen === "Resources" && (
+    <div className="dropdown-container resources-menu">
+      <a href="#">Blog</a>
+      <a href="#">Tech News</a>
+      <a href="#">Gallery</a>
+      <a href="#">Download Brochure</a>
+    </div>
+  )}
+</div>
+<div className="search-container">
+  <button className="search-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+    </svg>
+  </button>
+</div>
           <button className="sign-up">Get in touch</button>
         </div>
       </div>
