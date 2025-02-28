@@ -90,6 +90,7 @@
   border-radius: 4px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
+  margin-top: 20px;
 }
 
 .about-us-menu .dropdown-item {
@@ -136,6 +137,7 @@
   z-index: 10;
   margin-left: -460px;
   border-top: solid red;
+  margin-top: 20px;
 }
 
 /* Mega Menu Category */
@@ -218,6 +220,7 @@
   padding: 10px;
   z-index: 10;
   border-top: solid red;
+  margin-top: 20px;
 }
 
 .case-study-menu a {
@@ -250,6 +253,7 @@
   border-top: solid red;
   z-index: 10;
   margin-left: -30px;
+  margin-top: 20px;
 }
 
 /* Dropdown links */
@@ -280,7 +284,7 @@
   border-top: solid red;
   z-index: 10;
   margin-left: -40px;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 /* Dropdown links */
