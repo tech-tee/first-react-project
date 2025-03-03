@@ -355,30 +355,39 @@
   }
 }
 
-/* Mobile menu (hidden by default) */
 .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
-  width: 75%; /* Adjust width as needed */
-  max-width: 350px;
+  width: 80%; 
+  max-width: 750px;
   height: 100vh;
-  background: #ffffff !important;
+  background: white !important;
   box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  overflow-y: auto !important; 
+  overflow-x: hidden;
+  -ms-overflow-style: none;
 }
 
-/* When mobile menu is active (visible) */
+body {
+  overflow: auto; 
+}
+
 .mobile-menu.active {
-  transform: translateX(0); /* Slide in */
+  transform: translateX(0); 
+  overflow-y: scroll !important;
 }
 
+.mobile-menu::-webkit-scrollbar {
+  display: none;
+}
 
-/* Mobile menu button */
 .menu-button {
   display: none;
   background: none;
@@ -412,14 +421,17 @@
   background: #e0e0e0 !important;
 }
 
-/* Close Button */
 .close-button {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: -30px; 
+  right: 15px;
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 1101; /* Ensure it's above everything */
+  padding: 5px;
+  padding-top: 40px;
+  display: block !important;
 }
 
 .close-button svg {
@@ -429,6 +441,62 @@
 .close-button:hover svg {
   color: red;
   cursor: pointer;
+}
+
+/* Mobile Search Bar */
+.mobile{
+  display: none;
+}
+
+.mobile-search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px;
+  background: #f1f1f1;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+/* Search Input */
+.mobile-search input {
+  flex: 1;
+  padding: 10px 40px 10px 10px; /* Extra right padding for the icon */
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+/* Search Icon Inside the Input */
+.search-icon {
+  position: absolute;
+  right: 12px; /* Adjusts the position inside the input */
+  color: #666;
+  display: flex;
+  align-items: center;
+  pointer-events: none; 
+  border: none;/* Ensures the input remains clickable */
+}
+
+/* Search Icon Size */
+.search-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.abt-us-mobile-item a{
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  line-height: 3;
+}
+
+.chevron-icon {
+  transform: rotate(-90deg); /* Rotates down chevron to face right */
+  margin-right: 8px; /* Adds space between chevron and text */
+  color: black; /* Matches theme color */
 }
 
 
@@ -446,26 +514,36 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 75%;
-    max-width: 350px;
-    height: 100vh;
-    background: #ffffff !important;
+    width: 80%;
+    max-width: 750px;
+    height: 100vh; /* Full height for scrolling */
+    background: white !important;
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto !important; /* 🔥 Enable scrolling */
+    overflow-x: hidden;
+    color: black;
   }
 
   .mobile-menu.active {
     transform: translateX(0);
-  }
+    overflow-y: scroll !important;
 
+  }  
   .mobile-menu .nav-item {
     width: 100%;
     text-align: left;
     padding: 10px 0;
+    color: black;
+  }
+
+  .mega-menu .abt-us-mobile{
+    color: black !important;
   }
 
   .mobile-menu .dropdown-container {
