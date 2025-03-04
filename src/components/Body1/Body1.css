@@ -1,0 +1,149 @@
+.body1 {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 0px 60px 0px;
+    border-radius: 10px;
+    gap: 30px;
+    flex-wrap: wrap;
+    overflow: visible;
+    background: none;
+    max-width: 100%;
+    max-height: 40%;
+    box-sizing: bor;
+    
+}
+
+.body1::before{
+    content: ''; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    background: url('https://speedlinkng.com/wp-content/uploads/2022/09/white-background.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(0.1rem); 
+    z-index: -1; 
+}
+
+.text-section {
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    margin-left: 1.5cm;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    z-index: 1;
+    padding: 0px 0px 0px 50px;
+}
+
+.text-section h6 {
+    color: #EC1C24;
+    padding-left: 10px;
+    letter-spacing: 2.1px;
+    line-height: 1.7;
+    display: block;
+    margin: 0px 0px 16.5781px;
+    font-size: 16px;
+    font-family: 'Open sans' , sans-serif;
+}
+
+.text-section h1 {
+    color: #020D39;
+    padding-left: 10px;
+    line-height: 1.1;
+    word-wrap: break-word;
+    font-size: 52.5px;
+    margin-top: 35px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.text-section p {
+    color: #4B4F58;
+    padding-left: 10px;
+    padding-right: -1000px;
+    margin-right: -80px;
+    margin-top: -25px;
+    font-size: 17px;
+    font-family: "Open sans",sans-serif;
+    line-height: 1.6;
+    width: 580px;
+}
+
+.text-section img{
+    max-width: 16px;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+
+.button-text {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.cret-button {
+    background-color: #B41E24;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: none;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 5px;
+    padding: 15px 30px 15px 30px;
+    border-radius: 5px 5px 5px 5px;
+    max-width: 195.5px;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 40px;
+    height: 50px;
+}
+
+.cret-button:hover {
+    background-color: blue;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.image-section {
+    flex: 1;
+    max-width: 532px;
+    margin-left: 50px;
+    border: none;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin-right: 120px;
+    padding: 10px;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    border-color: #EC7D81;
+    border-radius: 40px 10px 100px 10px;
+    height: auto;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    text-align: center;
+}
+
+@media(min-width: 1367px){
+    .image-section{
+        margin-right: 450px;
+    }
+    .text-section{
+        margin-left: 350px;
+        font-family: "Open Sans", sans-serif;
+    }
+}

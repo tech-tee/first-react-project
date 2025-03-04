@@ -5,6 +5,18 @@
   padding: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
+  visibility: visible;
+  height: 97px;
+  z-index: 1000;
+}
+
+
+.navbar.hide {
+  transform: translateY(-100%); /* Moves navbar off-screen */
+}
+
+.navbar.show {
+  transform: translateY(0); /* Brings navbar back */
 }
 
 /* Flex container */
@@ -18,7 +30,7 @@
 
 /* Logo */
 .logo img {
-  height: 50px; /* Adjust as needed */
+  height: 95px; /* Adjust as needed */
   display: block;
   margin-left: 30px;
 }
@@ -28,6 +40,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: 70px;
 }
 
 .nav-item {
@@ -38,11 +51,15 @@
   background: none;
   border: none;
   color: #0A2863;
-  font-size: 12px;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 35.14px;
+  margin-top: 20px;
 }
 
 .nav-button:hover {
@@ -51,7 +68,6 @@
   cursor: pointer;
 }
 
-/* Regular Dropdown */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -83,19 +99,23 @@
   top: 100%;
   left: 0;
   background: #f8f8f8;
-  width: 250px;
+  width: 450px;
+  height: 390px;
   display: flex;
   flex-direction: column;
   padding: 10px;
   border-radius: 4px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
-  margin-top: 20px;
+  padding-left: 70px;
 }
 
 .about-us-menu .dropdown-item {
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #e4f7fc;
+  text-align: left;
+  margin-right: 30px;
+  margin-left: 40px;
 }
 
 .about-us-menu .dropdown-item:last-child {
@@ -103,17 +123,32 @@
 }
 
 .about-us-menu .dropdown-item a {
-  color: black;
   text-decoration: none;
-  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22.4px;
+  color: rgb(78, 78, 78);
   display: block;
 }
 
 .about-us-menu .dropdown-item a span {
   display: block;
-  font-size: 14px;
-  color: #666;
   margin-top: 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 17.4px;
+  color: rgb(117, 117, 117);
+}
+
+.dropdown-item div{
+  background-color: red !important;
+  width: 900px;
+}
+
+.nav-button:hover .about-us-menu{
+  display: block;
 }
 
 .about-us-menu .dropdown-item a:hover {
@@ -129,23 +164,28 @@
   background-color: white !important;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 10px;
   padding: 20px;
-  width: 600px;
+  width: 900px !important;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
-  margin-left: -460px;
+  margin-left: -260px;
   border-top: solid red;
-  margin-top: 20px;
 }
 
 /* Mega Menu Category */
 .mega-category {
   padding: 10px;
-  background-color: #f8f8f8;
+  background-color: #fbfbfb;
   margin-top: 30px;
   border-radius: 8px;
+}
+
+.mega-category img{
+  width: 8px;
+  height: 8px ; 
+  object-fit: cover; 
 }
 
 .mega-category h3 {
@@ -154,6 +194,7 @@
   margin-bottom: 8px;
   text-align: left;
   margin-left: 10px;
+  color: #2a2a2a;
 }
 
 .mega-category ul {
@@ -169,9 +210,13 @@
 
 .mega-category ul li a {
   text-decoration: none;
-  color: #0A2863;
-  font-size: 10px;
+  color: #81858b;
   margin-left: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 24.65px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .mega-category ul li a:hover {
@@ -181,32 +226,32 @@
   background-color: #e9e5e5;
 }
 
-.mega-category .section-1, .mega-category .section-4 {
-  height: 200px;
+.mega-menu .section-1, .mega-menu .section-4 {
+  height: 150px;
   width: 260px;
   margin-bottom: -30px;
   text-align: left;
 }
-.mega-category .section-4 {
-  margin-top: -75px;
+.mega-menu .section-4 {
+  margin-top: -25px;
 }
-.mega-category .section-2, .mega-category .section-5 {
-  height: 240px;
-  width: 280px;
+.mega-menu .section-2, .mega-menu .section-5 {
+  height: 170px;
+  width: 240px;
   margin-bottom: -10px;
-  margin-left: -2px;
+  margin-left: -10px;
 }
-.mega-category .section-5 {
-  margin-top: -35px;
+.mega-menu .section-5 {
+  margin-top: -5px;
 }
-.mega-category .section-3, .mega-category .section-6 {
-  height: 245px;
+.mega-menu .section-3, .mega-menu .section-6 {
+  height: 185px;
   width: 290px;
   margin-bottom: -10px;
-  margin-left: -55px;
+  margin-left: -40px;
 }
-.mega-category .section-6 {
-  margin-top: -35px;
+.mega-menu .section-6 {
+  margin-top: 9px;
 }
 
 .case-study-menu {
@@ -220,7 +265,6 @@
   padding: 10px;
   z-index: 10;
   border-top: solid red;
-  margin-top: 20px;
 }
 
 .case-study-menu a {
@@ -228,12 +272,13 @@
   padding: 10px;
   text-decoration: none;
   display: block;
-  font-size: 12px;
-  font-weight: bold;
   margin-left: 10px;
   margin-bottom: -5px;
   text-align: left;
-  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
 }
 
 .case-study-menu a:hover {
@@ -253,7 +298,6 @@
   border-top: solid red;
   z-index: 10;
   margin-left: -30px;
-  margin-top: 20px;
 }
 
 /* Dropdown links */
@@ -263,8 +307,9 @@
   text-decoration: none;
   display: block;
   text-align: left;
-  font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 34.14px;
 }
 
 .products-menu a:hover {
@@ -284,7 +329,6 @@
   border-top: solid red;
   z-index: 10;
   margin-left: -40px;
-  margin-top: 20px;
 }
 
 /* Dropdown links */
@@ -294,6 +338,8 @@
   text-decoration: none;
   display: block;
   text-align: left;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .resources-menu a:hover {
@@ -327,9 +373,20 @@
   color: #0A2863;
 }
 
+@media(max-width: 1366px){
+  .menu{
+    margin-right: 60px;
+  }
+}
 
-/* Show dropdowns on hover for large screens */
-@media (min-width: 769px) {
+@media (min-width: 1367px) {
+  .logo img{
+    margin-left: -310px;
+  }
+  
+  .menu{
+    margin-right: -290px;
+  }
   .dropdown-container {
     display: none;
     position: absolute;
@@ -569,12 +626,16 @@ body {
 .sign-up {
   background: #DA2124;
   color: white;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 549;
+  line-height: 15px;
   padding: 8px 16px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  width: 140;
-  height: 30px;
+  width: 125px;
+  height: 45px;
   margin-left: -15px;
 }
 

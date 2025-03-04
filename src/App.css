@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+/* Ensuring equal left & right padding for all sections */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+}

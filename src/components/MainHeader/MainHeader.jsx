@@ -1,6 +1,7 @@
-import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 import "./MainHeader.css";
+import roundSquare from "../../assets/images/black-square.png";
 
 /* Category Component */
 const Category = ({ title, items, className }) => (
@@ -8,7 +9,7 @@ const Category = ({ title, items, className }) => (
     <h3>{title}</h3>
     <ul>
       {items.map((item, index) => (
-        <li key={index}><a href="#">{item}</a></li>
+      <li key={index}><img src={roundSquare} className="rounSquare"/><a href="#">{item}</a></li>
       ))}
     </ul>
   </div>
@@ -16,20 +17,45 @@ const Category = ({ title, items, className }) => (
 
 function MainHeader() {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
+const [dropdownOpen, setDropdownOpen] = useState(null);
+const [mobileDropdown, setMobileDropdown] = useState(null);
+const [isVisible, setIsVisible] = useState(true);  // Keep only one declaration
+const [lastScrollY, setLastScrollY] = useState(0);  // Keep only one declaration
+const [scroll, setScroll] = useState(false);  // This is fine
 
-  const [mobileDropdown, setMobileDropdown] = useState(null);
-  const toggleDropdown = (menu) => {
-    setDropdownOpen((prev) => (prev === menu ? null : menu));
+const toggleDropdown = (menu) => {
+  setDropdownOpen((prev) => (prev === menu ? null : menu));
+};
+
+// For Mobile Dropdowns
+const toggleMobileDropdown = (menu) => {
+  setMobileDropdown((prev) => (prev === menu ? null : menu));
+};
+
+// Detect Scroll Direction for Navbar Visibility
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    // Show navbar on scroll up, hide on scroll down
+    if (currentScrollY > lastScrollY) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+
+    // Add background color after 50px scroll
+    setScroll(currentScrollY >= 50);
+
+    setLastScrollY(currentScrollY);
   };
-  
-  // For Mobile Dropdowns
-  const toggleMobileDropdown = (menu) => {
-    setMobileDropdown((prev) => (prev === menu ? null : menu));
-  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScrollY]);
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isVisible ? "show" : "hide"}`}>
       <div className="container">
         <a href="#" className="logo">
           <img src="https://speedlinkng.com/wp-content/uploads/2023/06/1-223x93.png" alt="Logo" className="logo-img" />
@@ -50,12 +76,12 @@ function MainHeader() {
             <button className="nav-button" onClick={() => toggleDropdown("About Us")}>About Us <ChevronDown size={16} /></button>
             {dropdownOpen === "About Us" && (
               <div className="dropdown-container about-us-menu">
-                <a href="#">Who we are</a>
-                <a href="#">What we do</a>
-                <a href="#">Why Speedlink</a>
-                <a href="#">Meet our Team</a>
-                <a href="#">Our partners & top Clients</a>
-              </div>
+              <div className="dropdown-item"><a href="#"><strong>Who we are</strong><br/><span>Our history, mission, vision, and values.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>What we do</strong><br /><span>Learn more about the wide range of IT services we offer.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>Why Speedlink</strong><br /><span>We provide ICT solutions that make your business stand out.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>Meet our Team</strong><br /><span>Meet our decent, hardworking team members.</span></a></div>
+              <div className="dropdown-item"><a href="#"><strong>Our partners & top Clients</strong><br /><span>View our partner companies and top clients.</span></a><div className="abt-seperator"></div></div>
+            </div>
             )}
           </div>
 
@@ -112,7 +138,13 @@ function MainHeader() {
               </div>
             )}
           </div>
-
+          <div className="search-container">
+          <span className="search-button">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+            </span>
+          </div>
           <button className="sign-up">Get in touch</button>
         </div>
       </div>
@@ -158,7 +190,7 @@ function MainHeader() {
   </button>
   
   {item.dropdown && mobileDropdown === item.label && (
-    <div className="abt-us-mobile">
+    <div className="dropdown-container">
       {item.options.map((option, index) => (
         <div key={index} className="abt-us-mobile-item">
           <ChevronDown size={14} className="chevron-icon" /> {/* Right chevron added */}

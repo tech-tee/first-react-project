@@ -1,8 +1,8 @@
 import React from 'react';
 import './CaseSection.css';
-import ArrowIcon from '../assets/images/greater-than-sign-10087.png';
-import Icon1 from '../assets/images/icons8-paper-60.png';
-import ArrowIcon1 from '../assets/images/greater-than-sign-10087.png';
+import ArrowIcon from '../../assets/images/greater-than-sign-10087.png';
+import Icon1 from '../../assets/images/icons8-paper-60.png';
+import ArrowIcon1 from '../../assets/images/greater-than-sign-10087.png';
 
 const CaseSection = () => {
   return (
