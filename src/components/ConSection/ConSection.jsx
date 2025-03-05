@@ -1,13 +1,13 @@
 import React from 'react';
 import './ConSection.css';
-import CaretIcon from '../assets/images/caret.png';
-import PhoneIcon from '../assets/images/phone-331.png';
-import EmailIcon from '../assets/images/message-324.png';
-import FacebookIcon from '../assets/images/facebook-5222.png';
-import TwitterIcon from '../assets/images/twitter-logo-2429.png';
-import YoutubeIcon from '../assets/images/youtube-123.png';
-import InstagramIcon from '../assets/images/black-instagram-logo-3497.png';
-import LinkedInIcon from '../assets/images/black-linkedin-logo-15915.png';
+import CaretIcon from '../../assets/images/caret.png';
+import PhoneIcon from '../../assets/images/phone-331.png';
+import EmailIcon from '../../assets/images/message-324.png';
+import FacebookIcon from '../../assets/images/facebook-5222.png';
+import TwitterIcon from '../../assets/images/twitter-logo-2429.png';
+import YoutubeIcon from '../../assets/images/youtube-123.png';
+import InstagramIcon from '../../assets/images/black-instagram-logo-3497.png';
+import LinkedInIcon from '../../assets/images/black-linkedin-logo-15915.png';
 
 const ConSection = () => {
   return (

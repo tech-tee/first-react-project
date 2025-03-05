@@ -4,6 +4,7 @@
     padding: 40px 20px;
     color: #fff;
     text-align: center;
+    height: 750px;
 }
 
 .product-text h6 {
@@ -118,4 +119,27 @@
 .prd-button .buttonprd:hover {
     background-color: #114c8b; 
     transform: scale(1.1);
+}
+
+@media(min-width: 1367px){
+    .products{
+        height: 90vh;
+    }
+    .prd-images{
+        margin-left: 370px;
+        width: 60vw;
+        gap: 50px;
+    }
+     .prd-images .img-1{
+        width: 100%;
+        max-width: calc(100% - 2px);
+    }
+    .prd-button{
+        margin-top: 50px;
+        width: 100%;
+    }
+    .buttonprd{
+        width: 240px;
+        height: 55px;
+    }
 }

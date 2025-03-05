@@ -1,9 +1,9 @@
 import React from 'react';
 import './PrdSection.css';
-import Icon1 from '../assets/images/icons8-graduation-cap-64.png';
-import Icon2 from '../assets/images/bank.png';
-import Icon3 from '../assets/images/search.png';
-import Icon4 from '../assets/images/icons8-paper-60.png';
+import Icon1 from '../../assets/images/icons8-graduation-cap-64.png';
+import Icon2 from '../../assets/images/bank.png';
+import Icon3 from '../../assets/images/search.png';
+import Icon4 from '../../assets/images/icons8-paper-60.png';
 
 const PrdSection = () => {
   return (
