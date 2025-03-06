@@ -1,8 +1,7 @@
 import React from 'react';
 import './CaseSection.css';
-import ArrowIcon from '../../assets/images/greater-than-sign-10087.png';
 import Icon1 from '../../assets/images/icons8-paper-60.png';
-import ArrowIcon1 from '../../assets/images/greater-than-sign-10087.png';
+import ArrowIcon from '../../assets/images/right-chevron-new.png';
 
 const CaseSection = () => {
   return (
@@ -32,9 +31,8 @@ const CaseSection = () => {
           </p>
           <div className="grp1-btn">
             <button className="btn2">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <span>View case study</span>
-                <img src={ArrowIcon1} alt="Arrow Icon" />
+              <a href="#" target="_blank" rel="noopener noreferrer">View case study
+                <img src={ArrowIcon} alt="Arrow Icon" />
               </a>
             </button>
           </div>
