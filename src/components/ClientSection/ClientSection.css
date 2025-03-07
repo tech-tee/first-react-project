@@ -55,3 +55,14 @@
   width: 200px;
   margin-right: 80px;
 }
+
+@media(min-width: 1367px){
+  .client-img{
+    width: 1360px;
+  }
+  .client-img img{
+    margin-right: 180px;
+    width: 100%;
+    max-width: 190px;
+  }
+}

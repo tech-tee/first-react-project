@@ -33,8 +33,10 @@
 }
 .tech-img{
   overflow: hidden;
-  width: 856px;
+  width: 1136px;
   margin: 0 auto;
+  margin-left: 105px;
+  
 }
 .tech-img-inner{
   display: flex;
@@ -42,6 +44,13 @@
 }
 .tech-img img{
   width: 50px;
-  margin-right: 35px;
+  margin-right: 64px;
   padding-bottom: 70px;
+}
+
+@media(min-width: 1367px){
+  .tech-img{
+    margin-left: 370px;
+    width: 1250px;
+  }
 }

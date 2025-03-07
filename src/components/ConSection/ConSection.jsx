@@ -73,14 +73,11 @@ const ConSection = () => {
         <br />
         <br />
         <div className="loc-soci">
-          {[FacebookIcon, TwitterIcon, YoutubeIcon, InstagramIcon].map((icon, index) => (
+          {[FacebookIcon, TwitterIcon, YoutubeIcon, InstagramIcon, LinkedInIcon].map((icon, index) => (
             <div key={index}>
               <img src={icon} alt="Social Icon" />
             </div>
           ))}
-        </div>
-        <div className="linkedin">
-          <img src={LinkedInIcon} alt="LinkedIn" />
         </div>
       </div>
     </section>
