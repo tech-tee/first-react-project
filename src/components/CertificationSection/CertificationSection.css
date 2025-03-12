@@ -91,9 +91,28 @@
     line-height: 1.2;
 }
 
-@media(min-width: 1367px){
-    .certification{
+@media (min-width: 1367px) {
+    .certification {
         width: 55vw;
         margin-left: 410px;
+    }
+}
+
+@media (min-width: 1517px) {
+    .certification {
+        width: 52vw;
+        margin-left: 420px;
+        padding: 50px 30px;
+        height: 140px;
+    }
+    .certification-text h3 {
+        font-size: 26px;
+    }
+    .certification-text p {
+        font-size: 18px;
+    }
+    .button1 {
+        padding: 8px 70px;
+        font-size: 17px;
     }
 }

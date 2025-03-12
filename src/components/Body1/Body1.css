@@ -138,7 +138,7 @@
     text-align: center;
 }
 
-@media(min-width: 1367px){
+@media(min-width: 1517px){
     .image-section{
         margin-right: 450px;
     }
@@ -147,3 +147,6 @@
         font-family: "Open Sans", sans-serif;
     }
 }
+
+
+
