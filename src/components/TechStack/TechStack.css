@@ -48,9 +48,14 @@
   padding-bottom: 70px;
 }
 
-@media(min-width: 1367px){
+@media(min-width: 1517px){
   .tech-img{
-    margin-left: 370px;
+    margin-left: 380px;
     width: 1250px;
   }
+  .tech-img img{
+    width: 50px;
+    margin-right: 75px;
+  }
 }
+
