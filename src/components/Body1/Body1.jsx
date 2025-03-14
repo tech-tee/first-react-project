@@ -8,7 +8,7 @@ const Body1 = () => {
     <section className="body1">
       <div className="text-section">
         <h6>SPEEDLINK HI-TECH SOLUTIONS LIMITED</h6>
-        <h1>A complete Solution<br /> IT provider</h1>
+        <h1>A complete Solution IT provider</h1>
         <p>
           Speedlink Hi-Tech Solutions Limited is a Nigerian leading IT systems provider, known for providing clients with Enterprise world-class solutions addressing their local business needs. We deliver positive,<br /> rapid and the best return on investment “ROI” solutions for our customers.
         </p>

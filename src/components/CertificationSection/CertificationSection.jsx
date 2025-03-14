@@ -14,7 +14,7 @@ const CertificationSection = () => {
         <p>We’re excited to announce that we’re now an official Pearson VUE testing center! {<br />} Schedule your exam today and unlock your full potential.</p>
       </div>
       <button className="button1">
-        <span className="button1-text">Get<br />Certified</span>
+        <span>Get Certified</span>
       </button>
     </section>
   );

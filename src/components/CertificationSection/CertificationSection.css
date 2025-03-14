@@ -1,4 +1,3 @@
-
 .certification {
     background-image: url('https://speedlinkng.com/wp-content/uploads/2022/09/white-background.jpg'); 
     background-size: cover; 
@@ -25,7 +24,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:  rgba(2, 23, 109, 0.9);
+    background-color: rgba(49, 66, 136, 0.9);
     border-radius: 8px;
     z-index: 0; 
 }
@@ -36,7 +35,8 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 150px;
-    margin-right: 20px;
+    margin-left: -50px;
+    margin-top: -15px;
     position: relative;
     z-index: 2;
 }
@@ -50,6 +50,8 @@
     text-align: left;
     gap: 15px;
     z-index: 2;
+    margin-left: -20px;
+    margin-top: -40px;
 }
 
 .certification-text h3 {
@@ -60,18 +62,16 @@
 
 .certification-text p {
     font-size: 16px;
+    line-height: 1.6;
     margin: 0;
-    line-height: 1.5;
 }
 
 .button1 {
-    background-color: #ff0000;
+    background-color: #ef1821;
     color: white;
     border: none;
-    padding: 5px 60px;
+    padding: 10px 30px;
     border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
     cursor: pointer;
     align-self: flex-start;
     position: relative;
@@ -80,15 +80,24 @@
     z-index: 3;
     transition: background-color 0.3s ease;
     margin-top: 50px;
+    height: 7vh;
+    min-width: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button1 span {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .button1:hover {
-    background-color: #cc0000;
-}
-
-.button1-text {
-    text-align: center;
-    line-height: 1.2;
+    background-color: #000;
 }
 
 @media (min-width: 1367px) {
@@ -112,7 +121,27 @@
         font-size: 18px;
     }
     .button1 {
-        padding: 8px 70px;
+        padding: 10px 40px;
         font-size: 17px;
+    }
+}
+
+@media (min-width: 1821px) {
+    .certification {
+        width: 58vw;
+        margin-left: 320px;
+        padding: 60px 40px;
+        height: 95px;
+    }
+    .certification-text h3 {
+        font-size: 28px;
+    }
+    .certification-text p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+    .button1 {
+        width: auto;
+        padding: 12px 50px;
     }
 }

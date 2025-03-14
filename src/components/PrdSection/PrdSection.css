@@ -166,3 +166,31 @@
         font-size: 17px;
     }
 }
+
+@media (min-width: 1821px) {
+    .products {
+        height: 100vh;
+        padding: 60px 10%;
+    }
+
+    .prd-images {
+        margin-left: 90px;
+        width: 70vw;
+        gap: 25px;
+    }
+
+    .prd-images .img-1 {
+        max-width: 340px;
+        height: 360px;
+    }
+
+    .prd-button {
+        margin-top: 70px;
+    }
+
+    .buttonprd {
+        width: 280px;
+        height: 65px;
+        font-size: 18px;
+    }
+}

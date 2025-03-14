@@ -368,3 +368,34 @@
       width: 700px;
   }
 }
+
+@media (min-width: 1821px) {
+  .services {
+      height: 1000px; 
+      margin-bottom: -20px;
+      margin-left: -130px;
+  }
+  .services::before {
+      height: 900px;
+  }
+  .services::after {
+      height: 900px;
+  }
+  .ser-txt h2{
+    text-align: left;
+  }
+  .ser-txt p{
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 28.9px;
+    color: rgb(0, 0, 0);
+  }
+  .ser-txt1 button{
+    margin-right: 210px;
+  }
+  .ser-image {
+      width: 730px;
+  }
+}

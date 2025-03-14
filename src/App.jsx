@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 import TopHeader from './components/TopHeader/TopHeader.jsx';  
 import MainHeader from './components/MainHeader/MainHeader.jsx'; 
 import HeroSection from './components/HeroSection/HeroSection.jsx';
