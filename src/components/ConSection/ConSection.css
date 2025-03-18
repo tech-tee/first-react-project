@@ -252,131 +252,6 @@
     padding-left: 20px;
 }
 
-@media (min-width: 1367px) {
-    .con-sec {
-        margin-left: -110px;
-        height: 45vh;
-    }
-}
-
-@media (min-width: 1367px) {
-    .web-info {
-        height: 360px;
-        width: 470px;
-    }
-    .web-info img {
-        width: 100%;
-        max-width: fit-content;
-    }
-    .web-info p {
-        width: 100%;
-        max-width: 370px;
-        text-align: center;
-        padding-left: 50px;
-        font-family: "Open Sans", sans-serif;
-        font-size: 17px;
-        font-weight: 400;
-        line-height: 28.9px;
-        color: rgb(255, 255, 255);
-    }
-}
-
-@media (min-width: 1367px) {
-    .c-ser {
-        width: 470px;
-        height: 36vh;
-    }
-    .c-ser hr {
-        width: 370px;
-    }
-    .c-ser h2 {
-        font-family: Roboto, sans-serif;
-        font-size: 25px;
-        font-weight: 700;
-        line-height: 25px;
-        color: rgb(255, 255, 255);
-        padding-right: 190px;
-    }
-    .c-ser a {
-        font-family: "Open Sans", sans-serif;
-        font-size: 17px;
-        font-weight: 300;
-        line-height: 17px;
-        color: rgba(255, 255, 255, 0.89);
-    }
-}
-
-@media (min-width: 1367px) {
-    .quick-links {
-        width: 420px;
-        height: 34vh;
-    }
-}
-
-@media (min-width: 1367px) {
-    .locate-us {
-        width: 450px;
-        height: 38vh;
-    }
-    .loc-soci {
-        width: 100%;
-    }
-}
-
-@media (min-width: 1216px) and (max-width: 1366px) {
-    .con-sec {
-        height: 48vh;
-    }
-    .web-info {
-        max-width: 440px;
-    }
-    .c-ser {
-        max-width: 450px;
-    }
-    .quick-links {
-        max-width: 410px;
-    }
-    .locate-us {
-        max-width: 430px;
-    }
-}
-
-@media (min-width: 1093px) and (max-width: 1215px) {
-    .con-sec {
-        height: 50vh;
-    }
-    .web-info {
-        max-width: 400px;
-    }
-    .c-ser {
-        max-width: 420px;
-    }
-    .quick-links {
-        max-width: 390px;
-    }
-    .locate-us {
-        max-width: 400px;
-    }
-}
-
-@media (min-width: 1024px) and (max-width: 1092px) {
-    .con-sec {
-        height: 55vh;
-    }
-    .web-info {
-        max-width: 380px;
-    }
-    .c-ser {
-        max-width: 400px;
-    }
-    .quick-links {
-        max-width: 370px;
-    }
-    .locate-us {
-        max-width: 380px;
-    }
-}
-
 @media (min-width: 1517px) {
     .con-sec {
         height: 40vh;
@@ -393,5 +268,118 @@
     }
     .locate-us {
         max-width: 470px;
+    }
+}
+
+@media (min-width: 1821px) {
+    .con-sec {
+        height: 50vh;
+        padding-left: 10px;
+        padding-right: 120px;
+    }
+
+    .web-info {
+        width: 440px;
+        height: 380px;
+    }
+
+    .web-info img {
+        width: 100%;
+        max-width: 250px;
+        margin-left: 0 auto;
+        display: block;
+    }
+
+    .web-info p {
+        max-width: 340px;
+        text-align: center;
+        padding-left: 23px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 28.9px;
+        color: rgb(255, 255, 255);
+    }
+
+    .c-ser {
+        width: 440px;
+        height: 350px;
+    }
+
+    .c-ser hr {
+        width: 390px;
+    }
+
+    .c-ser h2 {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 25px;
+        color: rgb(255, 255, 255);
+        padding-right: 70px;
+    }
+
+    .c-ser a {
+        font-size: 18px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.89);
+    }
+
+    .c-ser hr{
+        margin-top: 1000px;
+        padding-left: 20px;
+        width: 260px;
+        height: 0.0001px;
+        margin: 0;         
+        border: none;  
+        border-top: 0.5px solid #42495e;
+        margin-left: 40px;
+        margin-bottom: 15px;
+    }
+
+    .quick-links {
+        width: 450px;
+        height: 340px;
+    }
+
+    .quick-links h2{
+        padding-right: 90px;
+    }
+
+    .quick-links div{
+        margin-left: 10px;
+    }
+
+    .locate-us {
+        max-width: 500px;
+        height: 380px;
+    }
+
+    .locate-us h2{
+        text-align: left;
+        padding-left: 140px;
+    }
+
+    .locate-us p{
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    .loc-soci {
+        width: 100%;
+        margin-top: -20px;
+    }
+
+    .loc-soci img{
+        width: 23px;
+        padding: 2px;
+        padding-top: 8px;
+    }
+    
+    .loc-soci div{
+        background-color: #3F4A5E;
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        align-items: center;
     }
 }

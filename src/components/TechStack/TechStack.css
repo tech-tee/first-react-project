@@ -59,3 +59,23 @@
   }
 }
 
+@media (min-width: 1821px) {
+  .tech-stack {
+    height: 400px;
+  }
+  .tech-img-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tech-img {
+    margin-left: 350px;
+    width: 1175px;
+  }
+  .tech-img img {
+    width: 50px;
+    margin-right: 70px;
+  }
+}
+
+

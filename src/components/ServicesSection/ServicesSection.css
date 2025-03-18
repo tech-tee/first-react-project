@@ -47,10 +47,12 @@
   color: rgb(2, 13, 57);
   margin-bottom: 0;
   margin-top: 80px;
+  text-align: left
 }
 
 .ser-txt p {
   color: #000;
+  text-align: left;
 }
 
 .ser-txt1 {

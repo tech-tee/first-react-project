@@ -44,7 +44,6 @@ const CaseSection = () => {
           />
         </div>
       </div>
-
       <div className="snd-grp">
         <div className="grp2-img">
           <img

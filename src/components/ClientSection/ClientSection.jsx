@@ -19,7 +19,7 @@ const ClientSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex(prev => prev + 1);
-    }, 5000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 

@@ -66,3 +66,19 @@
     max-width: 190px;
   }
 }
+
+@media (min-width: 1821px) {
+  .client-img {
+    width: 1160px;
+    margin: 0 auto;
+  }
+
+  .client-img img {
+    max-width: 180px;
+    width: auto;
+    height: 100px; 
+    margin-right: 158px;
+    object-fit: contain; 
+  }
+}
+
