@@ -3,7 +3,7 @@ import './CertificationSection.css';
 
 const CertificationSection = () => {
   return (
-    <section className="certification">
+    <section className="certification cert-67">
       <img 
         src="https://speedlinkng.com/wp-content/uploads/2024/02/pearson-vue-1.gif" 
         className="cert-img" 

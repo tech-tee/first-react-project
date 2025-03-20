@@ -245,26 +245,52 @@
   margin-left: 5px;
 }
 
-@media(min-width: 1367px){
-  .services{
-    height: 900px; 
-    margin-bottom: -50px;
+@media (min-width: 1517px) { /* 90% */
+  .services {
+      height: 950px;
+      margin-bottom: -30px;
+      margin-left: -280px;
   }
-  .services::before{
-    height: 800px;
+  .services::before, .services::after {
+      height: 850px;
   }
-  .services::after{
-    height: 800px;
+  .ser-txt {
+      margin-left: 350px;
   }
-  .ser-txt{
-    margin-left: 310px;
+  .ser-txt1 button {
+      margin-right: 40px;
   }
-  .ser-txt h1{
-    font-family: "Open Sans", sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 28.9px;
-    color: rgb(75, 79, 88);
+  .ser-list {
+      margin-left: 350px;
+  }
+  .ser-images {
+      margin-right: 260px;
+      width: 25vw;
+      height: 10vh;
+  }
+  .ser-image {
+      width: 40vw;
+      height: 58vh;
+  }
+}
+
+@media (min-width: 1707px) { /* 80% */
+  .services {
+      height: 970px;
+      margin-bottom: -20px;
+  }
+  .services::before, .services::after {
+      height: 880px;
+  }
+  .ser-txt {
+      margin-left: 450px;
+  }
+  .ser-txt h2{
+    font-family: Roboto, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    color: rgb(2, 13, 57);
   }
   .ser-txt p{
     font-family: "Open Sans", sans-serif;
@@ -273,131 +299,83 @@
     line-height: normal;
     color: rgb(0, 0, 0);
   }
-  .ser-txt1 button{
-    margin-right: 320px;
+  .ser-txt1 button {
+      margin-right: 135px;
   }
-  .ser-list{
-    margin-left: 310px;
+  .ser-list {
+      margin-left: 450px;
   }
   .ser-list ul li a{
-    font-family: "Nexa Bold", sans-serif;
+    font-family: "Nexa bold", sans-serif;
     font-size: 20px;
-    font-weight: 900;
-    line-height: 28.5714px;
-    color: #000;
-  }
-  .ser-images{
-    margin-right: 600px;
-  }
-  .ser-image{
-    width: 750px;
-  }
-}
-
-@media (min-width: 1367px) {
-  .services {
-      height: 900px; 
-      margin-bottom: -50px;
-  }
-  .services::before {
-      height: 800px;
-  }
-  .services::after {
-      height: 800px;
-  }
-  .ser-txt {
-      margin-left: 310px;
-  }
-  .ser-txt h1 {
-      font-family: "Open Sans", sans-serif;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 28.9px;
-      color: rgb(75, 79, 88);
-  }
-  .ser-txt p {
-      font-family: "Open Sans", sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: normal;
-      color: rgb(0, 0, 0);
-  }
-  .ser-txt1 button {
-      margin-right: 320px;
-  }
-  .ser-list {
-      margin-left: 310px;
-  }
-  .ser-list ul li a {
-      font-family: "Nexa Bold", sans-serif;
-      font-size: 20px;
-      font-weight: 900;
-      line-height: 28.5714px;
-      color: #000;
+    font-weight: 700;
+    line-height: 30px;
   }
   .ser-images {
-      margin-right: 600px;
+      margin-right: 130px;
+      width: 35vw;
   }
   .ser-image {
-      width: 750px;
+      width: 35vw;
   }
 }
 
-@media (min-width: 1517px) {
-  .services {
-      height: 950px;
-      margin-bottom: -30px;
-  }
-  .services::before {
-      height: 850px;
-  }
-  .services::after {
-      height: 850px;
-  }
-  .ser-txt {
-      margin-left: 350px;
-  }
-  .ser-txt1 button {
-      margin-right: 350px;
-  }
-  .ser-list {
-      margin-left: 350px;
-  }
-  .ser-images {
-      margin-right: 650px;
-  }
-  .ser-image {
-      width: 700px;
-  }
-}
-
-@media (min-width: 1821px) {
+@media (min-width: 1821px) { /* 75% */
   .services {
       height: 1000px; 
       margin-bottom: -20px;
-      margin-left: -130px;
+      margin-left: -225px;
   }
-  .services::before {
+  .services::before, .services::after {
       height: 900px;
   }
-  .services::after {
-      height: 900px;
+  .ser-txt h2 {
+      text-align: left;
   }
-  .ser-txt h2{
-    text-align: left;
+  .ser-txt p {
+      text-align: left;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 28.9px;
+      color: rgb(0, 0, 0);
   }
-  .ser-txt p{
-    text-align: left;
-    font-family: "Open Sans", sans-serif;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 28.9px;
-    color: rgb(0, 0, 0);
-  }
-  .ser-txt1 button{
-    margin-right: 210px;
+  .ser-txt1 button {
+      margin-right: 190px;
   }
   .ser-image {
-      width: 730px;
+      width: 33vw;
+  }
+  .ser-images{
+    width: 33vw;
+    margin-right: 190px;
+  }
+}
+
+@media (min-width: 2049px) { /* 67% */
+  .services {
+      height: 1050px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .services::before, .services::after {
+      height: 920px;
+  }
+  .ser-txt {
+      margin-left: 340px;
+  }
+  .ser-txt1 button {
+      margin-right: 290px;
+  }
+  .ser-list {
+      margin-left: 340px;
+  }
+  .ser-images {
+      margin-right: 280px;
+      width: 32vw;
+      height: auto;
+  }
+  .ser-image {
+      width: 32vw;
+      height: 50vh;
   }
 }

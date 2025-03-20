@@ -94,52 +94,117 @@
     vertical-align: middle;
     margin-right: 5px;
 }
-@media (max-width: 1366px) {
-    .hero {
-        height: 97vh;
-    }
-    .hero-content h1 {
-        font-family: Roboto, sans-serif;
-        font-size: 60px;
-        font-weight: 700;
-        line-height: 66px;
-        color: rgba(255, 255, 255, 0.98);
-        width: 990px;
-    }
-}
+
 
 @media (min-width: 1367px) {
     .hero {
         height: 65vh;
     }
     .hero-content h1 {
-        font-family: Roboto, sans-serif;
-        font-size: 60px;
-        font-weight: 700;
+        font-size: 58px;
         line-height: 66px;
-        color: rgba(255, 255, 255, 0.98);
-        width: 990px;
+        width: 85vw;
+        max-width: 990px;
     }
 }
 
 @media (min-width: 1517px) {
     .hero {
-        height: 70vh;
+        height: 87vh;
     }
     .hero-content {
-        max-width: 1100px;
+        max-width: 90vw;
     }
     .hero-content h1 {
-        font-size: 65px;
-        line-height: 72px;
-        width: 1050px;
+        max-width: 1050px;
+        font-family: Roboto, sans-serif;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 66px;
+        color: rgba(255, 255, 255, 0.98);
     }
     .hero-content p {
-        font-size: 18px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 28.9px;
+        color: rgb(255, 255, 255);
     }
     .cta-button2 {
-        padding: 22px 45px;
+        padding: 20px 27px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 15px;
+        color: rgb(255, 255, 255);
+    }
+}
+
+@media (min-width: 1707px) {
+    .hero {
+        height: 78vh;
+    }
+    .hero-content h1 {
+        max-width: 1100px;
+        font-family: Roboto, sans-serif;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 66px;
+        color: rgba(255, 255, 255, 0.98);
+    }
+    .hero-content p {
+        font-family: "Open Sans", sans-serif;
         font-size: 17px;
+        font-weight: 400;
+        line-height: 28.9px;
+        color: rgb(255, 255, 255);
+    }
+    .cta-button2{
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 15px;
+        color: rgb(255, 255, 255);
+    }
+}
+
+@media (min-width: 1821px) {
+    .hero {
+        height: 74vh;
+    }
+    .hero-content h1 {
+        max-width: 950px;
+        font-family: Roboto, sans-serif;
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 66px;
+        color: rgba(255, 255, 255, 0.98);
+    }
+    .hero-content p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 28.9px;
+        color: rgb(255, 255, 255);
+    }
+    .cta-button2 {
+        padding: 22px 50px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 15px;
+        color: rgb(255, 255, 255);
+    }
+}
+
+@media (min-width: 2049px) {
+    .hero {
+        height: 67vh;
+    }
+    .hero-content h1 {
+        font-size: 70px;
+        line-height: 80px;
+        max-width: 1200px;
     }
 }
 
@@ -152,30 +217,3 @@
         padding-right: 4vw;
     }
 }
-
-@media (min-width: 1821px) {
-    .hero {
-      height: 67vh;
-    }
-  
-    .hero-content h1 {
-      font-family: Roboto, sans-serif;
-      font-size: 60px;
-      font-weight: 700;
-      line-height: 66px;
-      color: rgba(255, 255, 255, 0.98);
-      width: 1000px;
-    }
-    .hero-content p{
-        font-family: "Open Sans", sans-serif;
-        font-size: 17px;
-        font-weight: 400;
-        line-height: 28.9px;
-        color: rgb(255, 255, 255);
-    }
-    .cta-button2 {
-        padding: 20px 25px;
-        font-size: 17px;
-    }
-  }
-  
